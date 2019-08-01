@@ -5,7 +5,6 @@ import { matchRoutes } from 'react-router-config'
 import Routes from './client/Routes'
 import renderer from './helpers/renderer'
 import createStore from './helpers/createStore'
-import { resolve } from 'dns';
 
 const app = express();
 

@@ -227,30 +227,13 @@ var _App = __webpack_require__(13);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _UsersListPage = __webpack_require__(15);
-
-var _UsersListPage2 = _interopRequireDefault(_UsersListPage);
-
-var _NotFoundPage = __webpack_require__(16);
-
-var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
-
-var _AdminsListPage = __webpack_require__(17);
-
-var _AdminsListPage2 = _interopRequireDefault(_AdminsListPage);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = [_extends({}, _App2.default, {
     routes: [_extends({}, _HomePage2.default, {
         path: '/',
         exact: true
-    }), _extends({}, _AdminsListPage2.default, {
-        path: '/admins'
-    }), _extends({}, _UsersListPage2.default, {
-        path: '/users'
-
-    }), _extends({}, _NotFoundPage2.default)]
+    })]
 })];
 
 /***/ }),
@@ -295,8 +278,6 @@ var _renderer2 = _interopRequireDefault(_renderer);
 var _createStore = __webpack_require__(22);
 
 var _createStore2 = _interopRequireDefault(_createStore);
-
-var _dns = __webpack_require__(29);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -534,313 +515,10 @@ function mapStateToProps(_ref2) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
 
 /***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.loadData = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(2);
-
-var _actions = __webpack_require__(1);
-
-var _reactHelmet = __webpack_require__(6);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var UsersList = function (_Component) {
-    _inherits(UsersList, _Component);
-
-    function UsersList() {
-        _classCallCheck(this, UsersList);
-
-        return _possibleConstructorReturn(this, (UsersList.__proto__ || Object.getPrototypeOf(UsersList)).apply(this, arguments));
-    }
-
-    _createClass(UsersList, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.fetchUsers();
-        }
-    }, {
-        key: 'renderUsers',
-        value: function renderUsers() {
-            return this.props.users.map(function (user) {
-                return _react2.default.createElement(
-                    'li',
-                    { key: user.id },
-                    ' ',
-                    user.name,
-                    ' '
-                );
-            });
-        }
-    }, {
-        key: 'head',
-        value: function head() {
-            return _react2.default.createElement(
-                _reactHelmet.Helmet,
-                null,
-                _react2.default.createElement(
-                    'title',
-                    null,
-                    this.props.users.length + ' Users Loaded',
-                    ' '
-                ),
-                _react2.default.createElement('meta', { property: 'og:title', content: 'Users App' })
-            );
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                this.head(),
-                'Here is a big list of users',
-                _react2.default.createElement(
-                    'ul',
-                    null,
-                    ' ',
-                    this.renderUsers(),
-                    ' '
-                )
-            );
-        }
-    }]);
-
-    return UsersList;
-}(_react.Component);
-
-function mapStateToProps(state) {
-    return { users: state.users };
-}
-
-function loadData(store) {
-    return store.dispatch((0, _actions.fetchUsers)());
-}
-
-exports.loadData = loadData;
-exports.default = {
-    loadData: loadData,
-    component: (0, _reactRedux.connect)(mapStateToProps, { fetchUsers: _actions.fetchUsers })(UsersList)
-};
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var NotFoundPage = function NotFoundPage(_ref) {
-    var _ref$staticContext = _ref.staticContext,
-        staticContext = _ref$staticContext === undefined ? {} : _ref$staticContext;
-
-    staticContext.notFound = true;
-    return _react2.default.createElement(
-        'h1',
-        null,
-        'Oops, route not found. '
-    );
-};
-
-exports.default = {
-    component: NotFoundPage
-};
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(2);
-
-var _actions = __webpack_require__(1);
-
-var _requireAuth = __webpack_require__(18);
-
-var _requireAuth2 = _interopRequireDefault(_requireAuth);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AdminsListPage = function (_Component) {
-    _inherits(AdminsListPage, _Component);
-
-    function AdminsListPage() {
-        _classCallCheck(this, AdminsListPage);
-
-        return _possibleConstructorReturn(this, (AdminsListPage.__proto__ || Object.getPrototypeOf(AdminsListPage)).apply(this, arguments));
-    }
-
-    _createClass(AdminsListPage, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.fetchAdmins();
-        }
-    }, {
-        key: 'renderAdmins',
-        value: function renderAdmins() {
-            return this.props.admins.map(function (admin) {
-                return _react2.default.createElement(
-                    'li',
-                    { key: admin.id },
-                    admin.name
-                );
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Protected list of admins'
-                ),
-                _react2.default.createElement(
-                    'ul',
-                    null,
-                    this.renderAdmins()
-                )
-            );
-        }
-    }]);
-
-    return AdminsListPage;
-}(_react.Component);
-
-function mapStateToProps(_ref) {
-    var admins = _ref.admins;
-
-    return { admins: admins };
-}
-
-exports.default = {
-    component: (0, _reactRedux.connect)(mapStateToProps, { fetchAdmins: _actions.fetchAdmins })((0, _requireAuth2.default)(AdminsListPage)),
-    loadData: function loadData(_ref2) {
-        var dispatch = _ref2.dispatch;
-        return dispatch((0, _actions.fetchAdmins)());
-    }
-};
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(2);
-
-var _reactRouterDom = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-exports.default = function (ChildComponent) {
-    var RequireAuth = function (_Component) {
-        _inherits(RequireAuth, _Component);
-
-        function RequireAuth() {
-            _classCallCheck(this, RequireAuth);
-
-            return _possibleConstructorReturn(this, (RequireAuth.__proto__ || Object.getPrototypeOf(RequireAuth)).apply(this, arguments));
-        }
-
-        _createClass(RequireAuth, [{
-            key: 'render',
-            value: function render() {
-                switch (this.props.auth) {
-                    case false:
-                        return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
-                    case null:
-                        return _react2.default.createElement(
-                            'div',
-                            null,
-                            'Loading....'
-                        );
-                    default:
-                        return _react2.default.createElement(ChildComponent, this.props);
-                }
-            }
-        }]);
-
-        return RequireAuth;
-    }(_react.Component);
-
-    function mapStateToProps(_ref) {
-        var auth = _ref.auth;
-
-        return { auth: auth };
-    }
-
-    return (0, _reactRedux.connect)(mapStateToProps)(RequireAuth);
-};
-
-/***/ }),
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1068,12 +746,6 @@ exports.default = function () {
             return state;
     }
 };
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-module.exports = require("dns");
 
 /***/ })
 /******/ ]);
