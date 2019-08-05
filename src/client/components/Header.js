@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Button from 'react-bootstrap/Button'
 
 const Header = ({ auth }) => {
     console.log('My auth status is ', auth);
@@ -14,6 +15,7 @@ const Header = ({ auth }) => {
         <nav>
             <div className = "nav-wrapper">
                 <Link to="/" className = "brand-logo">React SSR</Link>
+                <Button variant="primary">Primary</Button>
                 <ul className = "right">
                     <li><Link to="/users">Users</Link></li>
                     <li><Link to="/admins">Admins</Link></li>
