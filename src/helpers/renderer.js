@@ -28,11 +28,20 @@ export default (req, store, context) => {
     <head>
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
         <div id = "root"> ${content} </div>
         <script>window.INITIAL_STATE = ${serialize(store.getState())}
+        <script
+            src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+            crossorigin
+        />
         <script src="bundle.js"></script> 
     </body>
     </html>
