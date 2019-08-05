@@ -9148,9 +9148,11 @@ module.exports = exports["default"];
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.ProductTitle = undefined;
+exports.ProductPrice = exports.ProductDesc = exports.ProductTitle = undefined;
 
-var _templateObject = _taggedTemplateLiteral(['\n    fontWeight: 18px;\n    color: green;\n'], ['\n    fontWeight: 18px;\n    color: green;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    width: 228px;\n    height: 31px;\n    font-family: Arial;\n    font-size: 27px;\n    color: #222222;\n    font-weight: 400;\n    text-decoration: none solid rgb(34, 34, 34);\n'], ['\n    width: 228px;\n    height: 31px;\n    font-family: Arial;\n    font-size: 27px;\n    color: #222222;\n    font-weight: 400;\n    text-decoration: none solid rgb(34, 34, 34);\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    width: 224px;\n    height: 105px;\n    font-family: Arial;\n    font-size: 14px;\n    color: #000000;\n    font-weight: 400;\n    text-decoration: none solid rgb(0, 0, 0);\n    line-height: 21px;\n'], ['\n    width: 224px;\n    height: 105px;\n    font-family: Arial;\n    font-size: 14px;\n    color: #000000;\n    font-weight: 400;\n    text-decoration: none solid rgb(0, 0, 0);\n    line-height: 21px;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    width: 125px;\n    height: 27px;\n    font-family: Arial;\n    font-size: 23px;\n    color: #222222;\n    font-weight: 400;\n    text-decoration: none solid rgb(34, 34, 34);\n'], ['\n    width: 125px;\n    height: 27px;\n    font-family: Arial;\n    font-size: 23px;\n    color: #222222;\n    font-weight: 400;\n    text-decoration: none solid rgb(34, 34, 34);\n']);
 
 var _styledComponents = __webpack_require__(492);
 
@@ -9160,21 +9162,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-// import styled from '@emotion/styled'
-
-
 var ProductTitle = _styledComponents2.default.h3(_templateObject);
 
-// let  ProductTitle = styled.h3({
-//     font-family: 'Arial';
-//     font-size: '27px';
-//     color: 'green';
-//     font-weight: '400';
-//     text-decoration: 'none solid rgb(34, 34, 34)';
-//   })
+var ProductDesc = _styledComponents2.default.div(_templateObject2);
 
+var ProductPrice = _styledComponents2.default.div(_templateObject3);
 
 exports.ProductTitle = ProductTitle;
+exports.ProductDesc = ProductDesc;
+exports.ProductPrice = ProductPrice;
 
 /***/ }),
 /* 191 */
@@ -45153,9 +45149,14 @@ var ProductCard = function ProductCard() {
           data.prodName
         ),
         _react2.default.createElement(
-          _Card2.default.Text,
+          _styles.ProductDesc,
           null,
           data.prodDesc
+        ),
+        _react2.default.createElement(
+          _styles.ProductPrice,
+          null,
+          data.cost
         ),
         _react2.default.createElement(
           _Button2.default,
@@ -48721,88 +48722,43 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _templateObject = _taggedTemplateLiteral(['\nwidth: 1440px;\nheight: 100px;\nborder: 1px solid #666666;\nbackground-color: #fff;\nbackground-size: cover;\nbox-shadow: 0px 1px 2px rgba(0,0,0,0.5);\n'], ['\nwidth: 1440px;\nheight: 100px;\nborder: 1px solid #666666;\nbackground-color: #fff;\nbackground-size: cover;\nbox-shadow: 0px 1px 2px rgba(0,0,0,0.5);\n']);
+
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(160);
+var _styledComponents = __webpack_require__(492);
 
-var _reactRedux = __webpack_require__(181);
-
-var _Button = __webpack_require__(189);
-
-var _Button2 = _interopRequireDefault(_Button);
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header(_ref) {
-    var auth = _ref.auth;
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-    console.log('My auth status is ', auth);
-    var authButton = auth ? _react2.default.createElement(
-        'a',
-        { href: '/api/logout' },
-        'Logout'
-    ) : _react2.default.createElement(
-        'a',
-        { href: '/api/auth/google' },
-        'Login'
-    );
+var Nav = _styledComponents2.default.div(_templateObject);
+
+var Header = function Header() {
+    // console.log('My auth status is ', auth);
+    // const authButton = auth ? (
+    //     <a href="/api/logout">Logout</a>
+    // ) : (
+    //         <a href="/api/auth/google">Login</a>
+    //     );
+
 
     return _react2.default.createElement(
-        'nav',
+        Nav,
         null,
-        _react2.default.createElement(
-            'div',
-            { className: 'nav-wrapper' },
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/', className: 'brand-logo' },
-                'React SSR'
-            ),
-            _react2.default.createElement(
-                _Button2.default,
-                { variant: 'primary' },
-                'Primary'
-            ),
-            _react2.default.createElement(
-                'ul',
-                { className: 'right' },
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/users' },
-                        'Users'
-                    )
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/admins' },
-                        'Admins'
-                    )
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    authButton
-                )
-            )
-        )
+        'Hwllo'
     );
 };
 
-function mapStateToProps(_ref2) {
-    var auth = _ref2.auth;
+// function mapStateToProps({ auth }) {
+//     return { auth };
+// }
 
-    return { auth: auth };
-}
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
+exports.default = Header;
 
 /***/ }),
 /* 503 */
