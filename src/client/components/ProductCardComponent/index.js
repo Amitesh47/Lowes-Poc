@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Card from "react-bootstrap/Card";
 import Button from 'react-bootstrap/Button'
 
-import {ProductTitle} from "./styles"
+import {ProductTitle,ProductDesc,ProductPrice} from "./styles"
 
 const ProductCard = () => {
     let data={
@@ -17,9 +17,10 @@ const ProductCard = () => {
         <Card.Img variant="top" src="https://tinyurl.com/y5nmss4b" />
         <Card.Body>
           <ProductTitle>{data.prodName}</ProductTitle>
-          <Card.Text>
+          <ProductDesc>
             {data.prodDesc}
-          </Card.Text>
+          </ProductDesc>
+          <ProductPrice>{data.cost}</ProductPrice>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
