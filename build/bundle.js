@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -207,11 +207,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HomePage = __webpack_require__(11);
+var _HomePage = __webpack_require__(13);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _App = __webpack_require__(12);
+var _App = __webpack_require__(20);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -228,34 +228,78 @@ exports.default = [_extends({}, _App2.default, {
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-bootstrap/Button");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(8);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.ProductTitle = undefined;
 
-var _express = __webpack_require__(9);
+var _templateObject = _taggedTemplateLiteral(['\n    fontWeight: 18px;\n    color: green;\n'], ['\n    fontWeight: 18px;\n    color: green;\n']);
+
+var _styledComponents = __webpack_require__(19);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+// import styled from '@emotion/styled'
+
+
+var ProductTitle = _styledComponents2.default.h3(_templateObject);
+
+// let  ProductTitle = styled.h3({
+//     font-family: 'Arial';
+//     font-size: '27px';
+//     color: 'green';
+//     font-weight: '400';
+//     text-decoration: 'none solid rgb(34, 34, 34)';
+//   })
+
+
+exports.ProductTitle = ProductTitle;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(10);
+
+var _express = __webpack_require__(11);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _expressHttpProxy = __webpack_require__(10);
+var _expressHttpProxy = __webpack_require__(12);
 
 var _expressHttpProxy2 = _interopRequireDefault(_expressHttpProxy);
 
@@ -265,11 +309,11 @@ var _Routes = __webpack_require__(3);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _renderer = __webpack_require__(15);
+var _renderer = __webpack_require__(22);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _createStore = __webpack_require__(19);
+var _createStore = __webpack_require__(26);
 
 var _createStore2 = _interopRequireDefault(_createStore);
 
@@ -324,25 +368,25 @@ app.listen(3000, function () {
 });
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-http-proxy");
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -356,21 +400,51 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Container = __webpack_require__(14);
+
+var _Container2 = _interopRequireDefault(_Container);
+
+var _Col = __webpack_require__(15);
+
+var _Col2 = _interopRequireDefault(_Col);
+
+var _Row = __webpack_require__(16);
+
+var _Row2 = _interopRequireDefault(_Row);
+
+var _ProductCardComponent = __webpack_require__(17);
+
+var _ProductCardComponent2 = _interopRequireDefault(_ProductCardComponent);
+
+var _styles = __webpack_require__(5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
     return _react2.default.createElement(
         'div',
-        { className: 'center-align', style: { marginTop: '200px' } },
+        null,
         _react2.default.createElement(
-            'h3',
+            _Container2.default,
             null,
-            'Welcome'
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            'Check out these awesome features'
+            _react2.default.createElement(
+                _Row2.default,
+                null,
+                _react2.default.createElement(
+                    _Col2.default,
+                    { sm: 3 },
+                    _react2.default.createElement(
+                        _styles.ProductTitle,
+                        null,
+                        'Hello'
+                    )
+                ),
+                _react2.default.createElement(
+                    _Col2.default,
+                    { sm: 9 },
+                    _react2.default.createElement(_ProductCardComponent2.default, null)
+                )
+            )
         )
     );
 };
@@ -380,7 +454,103 @@ exports.default = {
 };
 
 /***/ }),
-/* 12 */
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Container");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Col");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Row");
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Card = __webpack_require__(18);
+
+var _Card2 = _interopRequireDefault(_Card);
+
+var _Button = __webpack_require__(4);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _styles = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ProductCard = function ProductCard() {
+  var data = {
+    prodName: "Product Name",
+    prodDesc: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    prodRating: "10",
+    cost: "$8989.67"
+  };
+  return _react2.default.createElement(
+    _react.Fragment,
+    null,
+    _react2.default.createElement(
+      _Card2.default,
+      { style: { width: "18rem" } },
+      _react2.default.createElement(_Card2.default.Img, { variant: "top", src: "https://tinyurl.com/y5nmss4b" }),
+      _react2.default.createElement(
+        _Card2.default.Body,
+        null,
+        _react2.default.createElement(
+          _styles.ProductTitle,
+          null,
+          data.prodName
+        ),
+        _react2.default.createElement(
+          _Card2.default.Text,
+          null,
+          data.prodDesc
+        ),
+        _react2.default.createElement(
+          _Button2.default,
+          { variant: "primary" },
+          "Go somewhere"
+        )
+      )
+    )
+  );
+};
+
+exports.default = ProductCard;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Card");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -394,7 +564,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(13);
+var _Header = __webpack_require__(21);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -424,7 +594,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 13 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -438,11 +608,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(6);
 
-var _reactRedux = __webpack_require__(5);
+var _reactRedux = __webpack_require__(7);
 
-var _Button = __webpack_require__(14);
+var _Button = __webpack_require__(4);
 
 var _Button2 = _interopRequireDefault(_Button);
 
@@ -518,13 +688,7 @@ function mapStateToProps(_ref2) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap/Button");
-
-/***/ }),
-/* 15 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -538,11 +702,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(16);
+var _server = __webpack_require__(23);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(6);
 
-var _reactRedux = __webpack_require__(5);
+var _reactRedux = __webpack_require__(7);
 
 var _reactRouterConfig = __webpack_require__(2);
 
@@ -550,11 +714,11 @@ var _Routes = __webpack_require__(3);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _serializeJavascript = __webpack_require__(17);
+var _serializeJavascript = __webpack_require__(24);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
-var _reactHelmet = __webpack_require__(18);
+var _reactHelmet = __webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -580,29 +744,29 @@ exports.default = function (req, store, context) {
 
     var helmet = _reactHelmet.Helmet.renderStatic();
 
-    return '\n    <html>\n    <head>\n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        <link\n            rel="stylesheet"\n            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"\n            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"\n            crossorigin="anonymous"\n        />\n    </head>\n    <body>\n        <div id = "root"> ' + content + ' </div>\n        <script>window.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '\n        <script\n            src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"\n            crossorigin\n        />\n        <script src="bundle.js"></script> \n    </body>\n    </html>\n    ';
+    return '\n    <html>\n    <head>\n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        <link\n            rel="stylesheet"\n            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"\n            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"\n            crossorigin="anonymous"\n        />\n    </head>\n    <body>\n        <div id = "root"> ' + content + ' </div>\n        <script>window.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '</script>\n        <script src="bundle.js"></script> \n        <script\n            src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"\n            crossorigin\n        />\n    </body>\n    </html>\n    ';
 };
 
 /***/ }),
-/* 16 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 17 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("serialize-javascript");
 
 /***/ }),
-/* 18 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-helmet");
 
 /***/ }),
-/* 19 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -612,17 +776,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(6);
+var _redux = __webpack_require__(8);
 
-var _reduxThunk = __webpack_require__(20);
+var _reduxThunk = __webpack_require__(27);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _axios = __webpack_require__(21);
+var _axios = __webpack_require__(28);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _reducers = __webpack_require__(22);
+var _reducers = __webpack_require__(29);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -639,19 +803,19 @@ exports.default = function (req) {
 };
 
 /***/ }),
-/* 20 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 21 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ }),
-/* 22 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -661,17 +825,17 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(6);
+var _redux = __webpack_require__(8);
 
-var _usersReducer = __webpack_require__(23);
+var _usersReducer = __webpack_require__(30);
 
 var _usersReducer2 = _interopRequireDefault(_usersReducer);
 
-var _authReducer = __webpack_require__(24);
+var _authReducer = __webpack_require__(31);
 
 var _authReducer2 = _interopRequireDefault(_authReducer);
 
-var _adminsReducer = __webpack_require__(25);
+var _adminsReducer = __webpack_require__(32);
 
 var _adminsReducer2 = _interopRequireDefault(_adminsReducer);
 
@@ -684,7 +848,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 23 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -709,7 +873,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 24 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -734,7 +898,7 @@ exports.default = function () {
 var _actions = __webpack_require__(1);
 
 /***/ }),
-/* 25 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
