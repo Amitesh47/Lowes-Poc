@@ -1,1 +1,8 @@
+#ignore node modules
 node_modules
+
+#ignore build folder
+build
+
+#ignore public folder
+public
