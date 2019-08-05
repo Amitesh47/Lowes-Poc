@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import Card from "react-bootstrap/Card";
-import Button from 'react-bootstrap/Button'
 
-import {ProductTitle,ProductDesc,ProductPrice} from "./styles"
+import {ProductTitle,ProductDesc,ProductPrice,AddToCartButon,CartCount,CartCountButton, ProductRatings} from "./styles"
 
 const ProductCard = () => {
     let data={
@@ -20,8 +19,14 @@ const ProductCard = () => {
           <ProductDesc>
             {data.prodDesc}
           </ProductDesc>
+          <ProductRatings>({data.prodRating})</ProductRatings>
           <ProductPrice>{data.cost}</ProductPrice>
-          <Button variant="primary">Go somewhere</Button>
+          <div>
+            <AddToCartButon>Add to Cart</AddToCartButon>
+            <CartCountButton>-</CartCountButton>
+            <CartCount>1</CartCount>
+            <CartCountButton>+</CartCountButton>            
+          </div>
         </Card.Body>
       </Card>
     </Fragment>
