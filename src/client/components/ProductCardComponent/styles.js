@@ -79,4 +79,8 @@ let CartCountButton = styled.button`
     border:0px;
 `;
 
-export {ProductTitle,ProductDesc,ProductPrice,AddToCartButon, CartCount, CartCountButton, ProductRatings};
+let Whatever123 = styled.div`
+    color: #222222;
+`;
+
+export {ProductTitle,ProductDesc,ProductPrice,AddToCartButon, CartCount, CartCountButton,Whatever123, ProductRatings};

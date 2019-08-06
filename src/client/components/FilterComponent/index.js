@@ -4,10 +4,11 @@ import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 
 import {
+  Whatever123,
   FilterHeader,
   FilterSection,
   AddFilterButton,
-  FilterSectionBottom,
+  FilterSectionBottom
 } from "./styles";
 
 const Filter = () => {
@@ -20,7 +21,8 @@ const Filter = () => {
   };
   return (
     <div>
-      <Accordion style={{ width: "215px" }}>
+      
+      <div><Accordion style={{ width: "215px" }}>
         <Card>
           <FilterHeader>Filters</FilterHeader>
           <FilterSection>
@@ -33,6 +35,7 @@ const Filter = () => {
           </FilterSection>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
+              {/* <Whatever123>Hello</Whatever123> */}
               <div>1</div>
               <div>2</div>
               <div>3</div>
@@ -88,7 +91,7 @@ const Filter = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-      </Accordion>
+      </Accordion></div>
     </div>
   );
 };
