@@ -54,4 +54,7 @@ let AddFilterButton = styled.button`
     border:0px;
 `;
 
-export {AddFilterButton,FilterHeader,FilterSection,FilterSectionBottom}
+let Whatever123 = styled.div`
+ color: red;`;
+
+export {AddFilterButton,FilterHeader,FilterSection,FilterSectionBottom,Whatever123}

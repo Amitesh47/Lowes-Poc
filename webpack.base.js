@@ -10,7 +10,7 @@ module.exports = {
                     presets: [
                         'react',
                         'es2015',
-                        'stage-0', //to run some async code
+                        'stage-2', //to run some async code
                         ['env',
                             { targets: { browsers: ['last 2 versions'] } }
                         ] //run all the diff
