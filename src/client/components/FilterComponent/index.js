@@ -35,7 +35,7 @@ const Filter = () => {
           </FilterSection>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              {/* <Whatever123>Hello</Whatever123> */}
+              <Whatever123>Hello</Whatever123>
               <div>1</div>
               <div>2</div>
               <div>3</div>
