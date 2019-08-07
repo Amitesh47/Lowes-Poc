@@ -4,11 +4,14 @@ import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 
 import {
-  Whatever123,
+  FilterConatiner,
+  FilterDetailsConatiner,
   FilterHeader,
   FilterSection,
+  AddFilterButtonImage,
   AddFilterButton,
-  FilterSectionBottom
+  FilterSectionBottom,
+  FilterCount
 } from "./styles";
 
 const Filter = () => {
@@ -20,22 +23,20 @@ const Filter = () => {
     cost: "$8989.67"
   };
   return (
-    <div>
-      
-      <div><Accordion style={{ width: "215px" }}>
-        <Card>
+    <FilterConatiner>
+      <Accordion style={{ width: "215px" }}>
+        <Card style={{ width: "215px" }}>
           <FilterHeader>Filters</FilterHeader>
           <FilterSection>
             Category
             <AddFilterButton>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                +
+              <Accordion.Toggle as={Button} variant="link" eventKey="0" style={{ padding: "0" }}>
+                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <Whatever123>Hello</Whatever123>
               <div>1</div>
               <div>2</div>
               <div>3</div>
@@ -45,8 +46,8 @@ const Filter = () => {
           <FilterSection>
             Price
             <AddFilterButton>
-              <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                +
+              <Accordion.Toggle as={Button} variant="link" eventKey="1" style={{ padding: "0" }}>
+                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
@@ -61,8 +62,8 @@ const Filter = () => {
           <FilterSection>
             Rating
             <AddFilterButton>
-              <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                +
+              <Accordion.Toggle as={Button} variant="link" eventKey="2" style={{ padding: "0" }}>
+                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
@@ -77,8 +78,8 @@ const Filter = () => {
           <FilterSectionBottom>
             Discounts / Offers
             <AddFilterButton>
-              <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                +
+              <Accordion.Toggle as={Button} variant="link" eventKey="3" style={{ padding: "0" }}>
+                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSectionBottom>
@@ -91,9 +92,19 @@ const Filter = () => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-      </Accordion></div>
-    </div>
+      </Accordion>
+
+      <FilterDetailsConatiner>
+        <Card style={{ width: "215px" }}>
+          <FilterSection>
+            Cras justo odio
+            <FilterCount>14</FilterCount>
+          </FilterSection>
+        </Card>
+      </FilterDetailsConatiner>
+    </FilterConatiner>
   );
+
 };
 
 export default Filter;
