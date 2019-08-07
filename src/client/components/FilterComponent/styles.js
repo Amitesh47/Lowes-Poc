@@ -18,7 +18,7 @@ let FilterHeader = styled.div`
 let FilterSection = styled.div`
     width: 215px;
     height: 42px;
-    padding: 0px 15px;
+    padding: 0px 11px;
     border: 1px solid #dddddd;
     background-color: #ffffff;
     font-family: Arial;
@@ -45,16 +45,43 @@ let FilterSectionBottom = styled(FilterSection)`
 `;
 
 
-let AddFilterButton = styled.button`
+let AddFilterButton = styled.span`
     position: absolute;
-    right: 0px;
+    right: 12px;
     width: 32px;
     height: 32px;
     background: #ffffff;
     border:0px;
 `;
 
-let Whatever123 = styled.div`
- color: red;`;
+let AddFilterButtonImage = styled.img`
+    width: 32px;
+    height: 32px;
+    fill: #000000;
+`;
 
-export {AddFilterButton,FilterHeader,FilterSection,FilterSectionBottom,Whatever123}
+let FilterCount = styled.div`
+    position: absolute;
+    top: 9px;
+    right: 16px;
+    width: 20px;
+    height: 25px;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none solid rgb(255, 255, 255);
+    line-height: 23px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 11px;
+    border-radius: 10px;
+    background-color: #777777;
+    background-repeat: no-repeat;
+`;
+
+let FilterConatiner = styled.div`
+ margin-top: 89px;`;
+
+ let FilterDetailsConatiner = styled.div`
+ margin-top: 30px;`;
+
+export {AddFilterButton,AddFilterButtonImage,FilterHeader,FilterSection,FilterSectionBottom,FilterConatiner,FilterCount,FilterDetailsConatiner}

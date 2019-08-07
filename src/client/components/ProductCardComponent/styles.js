@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+let ProductConatiner = styled.div`
+    margin-top: 89px
+`;
+
 let ProductTitle = styled.h3`
     width: 228px;
     height: 31px;
@@ -10,6 +14,11 @@ let ProductTitle = styled.h3`
     text-decoration: none solid rgb(34, 34, 34);
     margin-top: 8px;
     margin-bottom: 8px;
+`;
+
+let ProductImage = styled.img`
+    width: 241px;
+    height: 200px;
 `;
 
 let ProductDesc = styled.div`
@@ -59,6 +68,8 @@ let AddToCartButon = styled.button`
 `;
 
 let CartCount = styled.span`
+    position: relative;
+    top: 3px;
     width: 32px;
     height: 30px;
     padding: 0px 10px;
@@ -72,15 +83,37 @@ let CartCount = styled.span`
     text-decoration: none solid rgb(71, 71, 71);
 `;
 
+let CountContainer = styled.span`
+    position: absolute;
+    right: 12px;
+`;
+
 let CartCountButton = styled.button`
+    padding:0;
     width: 24px;
     height: 24px;
     background: #ffffff;
     border:0px;
 `;
 
-let Whatever123 = styled.div`
-    color: #222222;
+let CartButtonImage = styled.img`
+    width: 17px;
+    height: 17px;
+    fill: #000000;
 `;
 
-export {ProductTitle,ProductDesc,ProductPrice,AddToCartButon, CartCount, CartCountButton,Whatever123, ProductRatings};
+
+
+export {
+    ProductTitle,
+    ProductDesc,
+    ProductPrice,
+    AddToCartButon, 
+    CartCount, 
+    CartCountButton, 
+    ProductRatings,
+    ProductImage,
+    ProductConatiner,
+    CountContainer,
+    CartButtonImage
+};
