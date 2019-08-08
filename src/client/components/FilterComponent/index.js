@@ -24,67 +24,71 @@ const Filter = () => {
   };
   return (
     <FilterConatiner>
-      <Accordion style={{ width: "215px" }}>
+      <Accordion style={{ width: "215px" }} data-test="FilterListCard">
         <Card style={{ width: "215px" }}>
-          <FilterHeader>Filters</FilterHeader>
-          <FilterSection>
+          <FilterHeader data-test="FilterListHeader">Filters</FilterHeader>
+          <FilterSection data-test="FilterListItem">
             Category
-            <AddFilterButton>
+            <AddFilterButton data-test="AddFilterButton">
               <Accordion.Toggle as={Button} variant="link" eventKey="0" style={{ padding: "0" }}>
-                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
+                <AddFilterButtonImage src="../../../../utils/assets/addIcon_Filter.png" alt="Add" />
+                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
           <Accordion.Collapse eventKey="0">
-            <Card.Body>
+            <Card.Body data-test="FilterDropDownBody">
               <div>1</div>
               <div>2</div>
               <div>3</div>
               <div>4</div>
             </Card.Body>
           </Accordion.Collapse>
-          <FilterSection>
+          <FilterSection data-test="FilterListItem">
             Price
-            <AddFilterButton>
+            <AddFilterButton data-test="AddFilterButton">
               <Accordion.Toggle as={Button} variant="link" eventKey="1" style={{ padding: "0" }}>
-                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
+                <AddFilterButtonImage src="../../../../utils/assets/addIcon_Filter.png" alt="Add" />
+                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
           <Accordion.Collapse eventKey="1">
-            <Card.Body>
+            <Card.Body data-test="FilterDropDownBody">
               <div>1</div>
               <div>2</div>
               <div>3</div>
               <div>4</div>
             </Card.Body>
           </Accordion.Collapse>
-          <FilterSection>
+          <FilterSection data-test="FilterListItem">
             Rating
-            <AddFilterButton>
+            <AddFilterButton data-test="AddFilterButton">
               <Accordion.Toggle as={Button} variant="link" eventKey="2" style={{ padding: "0" }}>
-                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
+                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+                <AddFilterButtonImage src="../../../../utils/assets/addIcon_Filter.png" alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
           <Accordion.Collapse eventKey="2">
-            <Card.Body>
+            <Card.Body data-test="FilterDropDownBody">
               <div>1</div>
               <div>2</div>
               <div>3</div>
               <div>4</div>
             </Card.Body>
           </Accordion.Collapse>
-          <FilterSectionBottom>
+          <FilterSectionBottom data-test="FilterListItem">
             Discounts / Offers
-            <AddFilterButton>
+            <AddFilterButton data-test="AddFilterButton">
               <Accordion.Toggle as={Button} variant="link" eventKey="3" style={{ padding: "0" }}>
-                <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" />
+                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+                <AddFilterButtonImage src="../../../../utils/assets/addIcon_Filter.png" alt="Add" />
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSectionBottom>
           <Accordion.Collapse eventKey="3">
-            <Card.Body>
+            <Card.Body data-test="FilterDropDownBody">
               <div>1</div>
               <div>2</div>
               <div>3</div>
@@ -94,7 +98,7 @@ const Filter = () => {
         </Card>
       </Accordion>
 
-      <FilterDetailsConatiner>
+      <FilterDetailsConatiner data-test="FilterDetailsCard">
         <Card style={{ width: "215px" }}>
           <FilterSection>
             Cras justo odio
