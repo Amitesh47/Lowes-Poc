@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseConfig = require("./webpack.base")
 
 const config = {
+    mode:'development',
     entry: './src/client/client.js',
      //tell webpack the root file of our
     // client application
