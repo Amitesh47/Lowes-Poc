@@ -45,15 +45,15 @@ height: 32px;
 fill: #000000;
 `;
 
-let Items = styled.div`
-margin-top: 30px;
-width: 47px;
-height: 27px
-font-family: Arial;
-font-size: 23px;
-color: #222222;
-font-weight: 400;
-text-decoration: none solid rgb(34, 34, 34);
-`;
+// let Items = styled.div`
+// margin-top: 30px;
+// width: 47px;
+// height: 27px
+// font-family: Arial;
+// font-size: 23px;
+// color: #222222;
+// font-weight: 400;
+// text-decoration: none solid rgb(34, 34, 34);
+// `;
 
-export { Nav, Logo, Search, Cart, Items }
+export { Nav, Logo, Search, Cart }

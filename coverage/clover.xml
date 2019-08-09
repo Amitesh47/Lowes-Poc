@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565260966500" clover="3.2.0">
-  <project timestamp="1565260966500" name="All files">
-    <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="27" coveredelements="27" complexity="0" loc="25" ncloc="25" packages="2" files="4" classes="4"/>
+<coverage generated="1565331764561" clover="3.2.0">
+  <project timestamp="1565331764562" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="34" coveredelements="34" complexity="0" loc="31" ncloc="31" packages="3" files="6" classes="6"/>
     <package name="FilterComponent">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.js" path="C:\Users\anuhakee\githubRepos\Lowes-Poc\src\client\components\FilterComponent\index.js">
+      <file name="index.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\FilterComponent\index.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="6" type="stmt"/>
         <line num="25" count="6" type="stmt"/>
       </file>
-      <file name="styles.js" path="C:\Users\anuhakee\githubRepos\Lowes-Poc\src\client\components\FilterComponent\styles.js">
+      <file name="styles.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\FilterComponent\styles.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
@@ -22,15 +22,30 @@
         <line num="84" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="Header">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\Header\index.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+      </file>
+      <file name="styles.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\Header\styles.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="ProductCardComponent">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.js" path="C:\Users\anuhakee\githubRepos\Lowes-Poc\src\client\components\ProductCardComponent\index.js">
+      <file name="index.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\ProductCardComponent\index.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="10" type="stmt"/>
         <line num="26" count="10" type="stmt"/>
       </file>
-      <file name="styles.js" path="C:\Users\anuhakee\githubRepos\Lowes-Poc\src\client\components\ProductCardComponent\styles.js">
+      <file name="styles.js" path="C:\Users\amiranja4\Desktop\Lowes-Poc\src\client\components\ProductCardComponent\styles.js">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
