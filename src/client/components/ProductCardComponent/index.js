@@ -26,24 +26,26 @@ const ProductCard = () => {
   return (
     <Fragment>
       <ProductConatiner>
+        <h3 data-test="H3Category">Category 1</h3>
         <Card style={{ width: "16.5rem" }}>
           {/* <Card.Img variant="top" src="https://tinyurl.com/y5nmss4b" /> */}
-
-          <Card.Body>
-            <ProductImage src="https://tinyurl.com/y5nmss4b" />
-            <ProductTitle>{data.prodName}</ProductTitle>
-            <ProductDesc>{data.prodDesc}</ProductDesc>
-            <ProductRatings>({data.prodRating})</ProductRatings>
-            <ProductPrice>{data.cost}</ProductPrice>
+          <Card.Body data-test="ProductCard">
+            <ProductImage src="https://tinyurl.com/y5nmss4b" data-test="ProductImage" />
+            <ProductTitle data-test="ProductTitle">{data.prodName}</ProductTitle>
+            <ProductDesc data-test="ProductDesc">{data.prodDesc}</ProductDesc>
+            <ProductRatings data-test="ProductRatings">({data.prodRating})</ProductRatings>
+            <ProductPrice data-test="ProductCost">{data.cost}</ProductPrice>
             <div>
-              <AddToCartButon>Add to Cart</AddToCartButon>
+              <AddToCartButon data-test="AddToCartButton">Add to Cart</AddToCartButon>
               <CountContainer>
                 <CartCountButton>                
-                  <CartButtonImage src={require("../../../../utils/assets/subIcon.png")} alt="Add To Cart" />                            
+                  <CartButtonImage data-test="DecrementCountButton" src="../../../../utils/assets/subIcon.png" alt="Remove From Cart" />                            
+                  {/* <CartButtonImage src={require("../../../../utils/assets/subIcon.png")} alt="Remove From Cart" />                             */}
                 </CartCountButton>
                 <CartCount>1</CartCount>
                 <CartCountButton>
-                  <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  
+                  {/* <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  */}
+                  <CartButtonImage data-test="IncrementCountButton" src="./addIcon.png" alt="Add To Cart" />                  
                 </CartCountButton>
               </CountContainer>
             </div>
