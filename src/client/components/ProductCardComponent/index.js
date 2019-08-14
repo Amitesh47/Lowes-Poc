@@ -18,24 +18,26 @@ import {
 } from "./styles";
 
 const ProductCard = (props) => {
+  let {productDetails}= props
+  console.log(productDetails)
   return (
     <Fragment>
       <ProductConatiner>
         {/* <h3 data-test="H3Category"></h3> */}
         <Card style={{ width: "16.5rem" }}>
           <Card.Body data-test="ProductCard">
-            <ProductImage src={props.thumbnail} data-test="ProductImage" />
-            <ProductTitle data-test="ProductTitle">{props.name}</ProductTitle>
-            <ProductDesc data-test="ProductDesc">{props.description}</ProductDesc>
+            <ProductImage src={productDetails.thumbnail} data-test="ProductImage" />
+            <ProductTitle data-test="ProductTitle">{productDetails.name}</ProductTitle>
+            <ProductDesc data-test="ProductDesc">{productDetails.description}</ProductDesc>
 
             <p><Star src="../../../../utils/assets/star.png"/>
               <Star src="../../../../utils/assets/star.png"/>
                 <Star src="../../../../utils/assets/star.png"/>
                 <Star src="../../../../utils/assets/star.png"/>
                 <Star src="../../../../utils/assets/star.png"/>
-                      <ProductRatings data-test="ProductRatings">({props.rating})</ProductRatings></p>
+                      <ProductRatings data-test="ProductRatings">( {productDetails.ratingInfo.userCount} )</ProductRatings></p>
 
-                    <ProductPrice data-test="ProductCost">{props.price}</ProductPrice>
+                    <ProductPrice data-test="ProductCost">{productDetails.price}</ProductPrice>
                     <div>
                       <AddToCartButon data-test="AddToCartButton">Add to Cart</AddToCartButon>
                       <CountContainer>

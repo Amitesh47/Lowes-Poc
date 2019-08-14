@@ -16,26 +16,24 @@ const ProductConatiner = () => {
     }, [])
 
     const renderData = category ? category.map((cat) => {
+        let prodListWithCategory = [{"category":cat}]
+        // console.log(prodList)
         for (let i = 0; i < wholeData.length; i++) {
             if (wholeData[i].category === cat)
-                return <ProductList
-                    key={wholeData[i].id}
-                    thumbnail={wholeData[i].thumbnail}
-                    name={wholeData[i].name}
-                    description={wholeData[i].description}
-                    rating={wholeData[i].ratingInfo.rating}
-                    price={wholeData[i].price}
-                />
+                prodListWithCategory = [...prodListWithCategory,wholeData[i]]
+                // console.log(prodList)               
         }
-
+        return <ProductList
+                    prodListWithCategory={prodListWithCategory}
+                />
 
 
     }) : null
 
     return (
-        <Fragment>
+        <div>
             {renderData}
-        </Fragment>
+        </div>
     )
 }
 
