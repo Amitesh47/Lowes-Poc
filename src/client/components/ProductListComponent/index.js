@@ -2,17 +2,22 @@ import React, { Fragment, useEffect, useCallback } from "react";
 import ProductCard from '../ProductCardComponent'
 
 const ProductList = (props) => {
+    let {prodListWithCategory}= props
+    let prodList=prodListWithCategory.slice(1)
+    let category= prodListWithCategory[0].category
+    console.log(prodList)
+
+    const renderData = prodList.map(product=>{
+        return <ProductCard 
+                    productDetails={product}
+                />
+    })
 
     return(
-        <div>
-            <ProductCard 
-             key={props.key}
-             thumbnail={props.thumbnail}
-             name = {props.name}
-             description={props.description}
-             rating = {props.rating}
-             price = {props.price} /> 
-        </div>
+        <Fragment>
+            <div>{category}</div>
+            {renderData}
+        </Fragment>
     )
 }
 
