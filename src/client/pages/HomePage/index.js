@@ -11,8 +11,8 @@ const Home = () => {
         <div>
             <HomePageConatiner>
                 <Row>
-                    <Col sm={3}><Filter /></Col>
-                    <Col sm={9}><ProductCard /></Col>
+                    <Col sm={3} ><Filter /></Col>
+                    <Col sm={9} ><ProductCard /></Col>
                 </Row>
             </HomePageConatiner>
         </div>

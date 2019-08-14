@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useCallback } from "react";
 import Card from "react-bootstrap/Card";
+import { useDispatch, useSelector } from 'react-redux'
 
 import {
   ProductTitle,
@@ -23,6 +24,15 @@ const ProductCard = () => {
     prodRating: "10",
     cost: "$8989.67"
   };
+  const data1 = useSelector(state => state)
+  const dispatch = useDispatch()
+  console.log(data1)
+  useEffect(() => {
+    dispatch({ type: 'GET_DATA' })
+  },[])
+
+
+
   return (
     <Fragment>
       <ProductConatiner>
@@ -38,14 +48,14 @@ const ProductCard = () => {
             <div>
               <AddToCartButon data-test="AddToCartButton">Add to Cart</AddToCartButon>
               <CountContainer>
-                <CartCountButton>                
-                  <CartButtonImage data-test="DecrementCountButton" src="../../../../utils/assets/subIcon.png" alt="Remove From Cart" />                            
+                <CartCountButton>
+                  <CartButtonImage data-test="DecrementCountButton" src="../../../../utils/assets/subIcon.png" alt="Remove From Cart" />
                   {/* <CartButtonImage src={require("../../../../utils/assets/subIcon.png")} alt="Remove From Cart" />                             */}
                 </CartCountButton>
                 <CartCount>1</CartCount>
                 <CartCountButton>
                   {/* <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  */}
-                  <CartButtonImage data-test="IncrementCountButton" src="./addIcon.png" alt="Add To Cart" />                  
+                  <CartButtonImage data-test="IncrementCountButton" src="./addIcon.png" alt="Add To Cart" />
                 </CartCountButton>
               </CountContainer>
             </div>

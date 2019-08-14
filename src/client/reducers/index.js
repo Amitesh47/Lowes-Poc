@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux'
-import userReducers from './usersReducer'
-import authReducer from'./authReducer'
-import adminsReducer from './adminsReducer'
-
-export default combineReducers({
-    users: userReducers,
-    auth: authReducer,
-    admins: adminsReducer
-})
+export default (state=[],action) => {
+    switch(action.type){
+        case 'RECEIVED_DATA':
+            return action.payload
+        default:
+            return state
+        }
+}

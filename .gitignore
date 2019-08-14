@@ -4,5 +4,5 @@ node_modules
 #ignore build folder
 build
 
-#ignore public folder
-public
+#ignore bundle.js in public folder
+public/bundle.js
