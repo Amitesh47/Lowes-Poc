@@ -24,22 +24,12 @@ const ProductCard = () => {
     prodRating: "10",
     cost: "$8989.67"
   };
-  const data1 = useSelector(state => state)
-  const dispatch = useDispatch()
-  // console.log(data1)
-
-  useEffect(() => {
-    dispatch({ type: 'GET_DATA' })
-  },[])
-
-
 
   return (
     <Fragment>
       <ProductConatiner>
         <h3 data-test="H3Category">Category 1</h3>
         <Card style={{ width: "16.5rem" }}>
-          {/* <Card.Img variant="top" src="https://tinyurl.com/y5nmss4b" /> */}
           <Card.Body data-test="ProductCard">
             <ProductImage src="https://tinyurl.com/y5nmss4b" data-test="ProductImage" />
             <ProductTitle data-test="ProductTitle">{data.prodName}</ProductTitle>
