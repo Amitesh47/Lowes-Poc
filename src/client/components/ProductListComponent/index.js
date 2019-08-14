@@ -1,11 +1,17 @@
 import React, { Fragment, useEffect, useCallback } from "react";
 import ProductCard from '../ProductCardComponent'
 
-const ProductList = () => {
+const ProductList = (props) => {
 
     return(
         <div>
-            <ProductCard /> 
+            <ProductCard 
+             key={props.key}
+             thumbnail={props.thumbnail}
+             name = {props.name}
+             description={props.description}
+             rating = {props.rating}
+             price = {props.price} /> 
         </div>
     )
 }

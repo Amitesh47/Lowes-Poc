@@ -16,26 +16,18 @@ import {
   CartButtonImage
 } from "./styles";
 
-const ProductCard = () => {
-  let data = {
-    prodName: "Product Name",
-    prodDesc:
-      "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-    prodRating: "10",
-    cost: "$8989.67"
-  };
-
+const ProductCard = (props) => {
   return (
     <Fragment>
       <ProductConatiner>
-        <h3 data-test="H3Category">Category 1</h3>
+        {/* <h3 data-test="H3Category"></h3> */}
         <Card style={{ width: "16.5rem" }}>
           <Card.Body data-test="ProductCard">
-            <ProductImage src="https://tinyurl.com/y5nmss4b" data-test="ProductImage" />
-            <ProductTitle data-test="ProductTitle">{data.prodName}</ProductTitle>
-            <ProductDesc data-test="ProductDesc">{data.prodDesc}</ProductDesc>
-            <ProductRatings data-test="ProductRatings">({data.prodRating})</ProductRatings>
-            <ProductPrice data-test="ProductCost">{data.cost}</ProductPrice>
+            <ProductImage src={props.thumbnail}data-test="ProductImage" />
+            <ProductTitle data-test="ProductTitle">{props.name}</ProductTitle>
+            <ProductDesc data-test="ProductDesc">{props.description}</ProductDesc>
+            <ProductRatings data-test="ProductRatings">({props.rating})</ProductRatings>
+            <ProductPrice data-test="ProductCost">{props.price}</ProductPrice>
             <div>
               <AddToCartButon data-test="AddToCartButton">Add to Cart</AddToCartButon>
               <CountContainer>
