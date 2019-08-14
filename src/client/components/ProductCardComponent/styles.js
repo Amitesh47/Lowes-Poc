@@ -33,7 +33,7 @@ let ProductDesc = styled.div`
     overflow: auto
 `;
 
-let ProductRatings = styled.div`
+let ProductRatings = styled.span`
     width: 47px;
     height: 27px;
     font-family: Arial;
@@ -103,6 +103,11 @@ let CartButtonImage = styled.img`
     fill: #000000;
 `;
 
+let Star = styled.img`
+width: 20px;
+height: 20px;
+fill: #000000;
+`;
 
 
 export {
@@ -116,5 +121,6 @@ export {
     ProductImage,
     ProductConatiner,
     CountContainer,
-    CartButtonImage
+    CartButtonImage,
+    Star
 };
