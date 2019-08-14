@@ -26,7 +26,7 @@ const ProductCard = () => {
   };
   const data1 = useSelector(state => state)
   const dispatch = useDispatch()
-  console.log(data1)
+  // console.log(data1)
 
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })

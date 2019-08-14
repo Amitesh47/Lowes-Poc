@@ -1,22 +1,6 @@
 import { takeEvery, put, all } from 'redux-saga/effects'
+import {category, fillCategory} from './helperFunctions'
 
-var category = [];
-
-function isPresent(categoryName){
-    for(let i=0; i<category.length; i++){
-        if(categoryName === category[i])
-            return true;
-    }
-    return  false
-}
-
-function fillCategory(wholeData){
-    for(let i=0; i<wholeData.length; i++){
-        if(isPresent(wholeData[i].category))
-            continue
-        category.push(wholeData[i].category)
-    }
-}
 function* fetchData(){
     const wholeData = yield fetch('https://api.myjson.com/bins/kjl6h')
     .then(response => response.json()); 
@@ -28,6 +12,10 @@ function* fetchData(){
 
 function* fetchActions() {
     yield takeEvery('GET_DATA', fetchData);
+}
+
+function spread(){
+    
 }
 
 export default function* rootSaga() {
