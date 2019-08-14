@@ -8,7 +8,12 @@ export const findByTestAtrr = (component, attr) => {
 };
 
 const setUp = (props={}) => {
-    const component = shallow(<ProductCard {...props} />);
+    const component = shallow(<ProductCard {...props} />).dive();
+    const wrapper2 = mount(
+        <Provider store={store}>
+          <ProductCard />
+        </Provider>
+      )
     return component;
 };
 
