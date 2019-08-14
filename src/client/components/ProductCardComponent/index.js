@@ -27,6 +27,7 @@ const ProductCard = () => {
   const data1 = useSelector(state => state)
   const dispatch = useDispatch()
   console.log(data1)
+
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })
   },[])
@@ -55,7 +56,7 @@ const ProductCard = () => {
                 <CartCount>1</CartCount>
                 <CartCountButton>
                   {/* <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  */}
-                  <CartButtonImage data-test="IncrementCountButton" src="./addIcon.png" alt="Add To Cart" />
+                  <CartButtonImage data-test="IncrementCountButton" src="../../../../utils/assets/addIcon.png" alt="Add To Cart" />
                 </CartCountButton>
               </CountContainer>
             </div>
