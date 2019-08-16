@@ -11,10 +11,10 @@ import {
   CartCountButton,
   ProductRatings,
   ProductImage,
-  ProductConatiner,
   CountContainer,
   CartButtonImage,
-  Star
+  Star,
+  CardTag
 } from "./styles";
 
 const ProductCard = (props) => {
@@ -22,9 +22,9 @@ const ProductCard = (props) => {
   console.log(productDetails)
   return (
     <Fragment>
-      <ProductConatiner>
+      <CardTag>
         {/* <h3 data-test="H3Category"></h3> */}
-        <Card style={{ width: "16.5rem" }}>
+        <Card style={{ width: "16.5rem",height: "540px"}} inline>
           <Card.Body data-test="ProductCard">
             <ProductImage src={productDetails.thumbnail} data-test="ProductImage" />
             <ProductTitle data-test="ProductTitle">{productDetails.name}</ProductTitle>
@@ -54,7 +54,7 @@ const ProductCard = (props) => {
                     </div>
           </Card.Body>
         </Card>
-      </ProductConatiner>
+      </CardTag>
     </Fragment>
               );
             };
