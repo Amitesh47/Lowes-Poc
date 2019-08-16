@@ -20,11 +20,15 @@ import {
 
 const ProductCard = (props) => {
   let productDetails= props.productDetails
-  let id = props.key
+  let id = productDetails._id
+  console.log('hello')
+  console.log(productDetails._id)
   let [count,setCount] = useState(1)
   console.log(productDetails)
-  // const count = useSelector((state) => state.count)
-  // const dispatch = useDispatch()
+  const count2 = useSelector((state) => state.count)
+  console.log(count2)
+
+  const dispatch = useDispatch()
   return (
     <Fragment>
       <CardTag>
@@ -44,7 +48,8 @@ const ProductCard = (props) => {
 
                     <ProductPrice data-test="ProductCost">{productDetails.price}</ProductPrice>
                     <div>
-                      <AddToCartButon data-test="AddToCartButton">Add to Cart</AddToCartButon>
+                      <AddToCartButon data-test="AddToCartButton"
+                      onClick = {() => dispatch({ type: 'ADD_TO_CART',payload:{productId:id,count}})}>Add to Cart</AddToCartButon>
                       <CountContainer>
                         <CartCountButton>
                           <CartButtonImage data-test="DecrementCountButton" src="../../../../utils/assets/subIcon.png" alt="Remove From Cart" 
