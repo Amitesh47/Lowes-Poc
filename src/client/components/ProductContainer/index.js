@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 
 import ProductList from '../ProductListComponent'
+import {ProductConatinerTag} from './styles'
 
 const ProductConatiner = () => {
 
@@ -31,9 +32,9 @@ const ProductConatiner = () => {
     }) : null
 
     return (
-        <div>
+        <ProductConatinerTag>
             {renderData}
-        </div>
+        </ProductConatinerTag>
     )
 }
 

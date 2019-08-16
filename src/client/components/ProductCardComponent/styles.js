@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-let ProductConatiner = styled.div`
-    margin-top: 89px
+let CardTag= styled.span`
+    margin-bottom: 30px;
 `;
 
 let ProductTitle = styled.h3`
     width: 228px;
-    height: 31px;
+    height: 64px;
     font-family: Arial;
     font-size: 27px;
     color: #222222;
@@ -119,8 +119,8 @@ export {
     CartCountButton, 
     ProductRatings,
     ProductImage,
-    ProductConatiner,
     CountContainer,
     CartButtonImage,
-    Star
+    Star,
+    CardTag
 };

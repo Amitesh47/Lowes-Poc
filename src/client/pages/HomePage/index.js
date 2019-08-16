@@ -2,7 +2,6 @@ import React from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
-import ProductCard from '../../components/ProductCardComponent'
 import ProductConatiner from '../../components/ProductContainer'
 import Filter from '../../components/FilterComponent'
 import {HomePageConatiner} from './styles'
