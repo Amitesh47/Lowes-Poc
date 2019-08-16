@@ -14,9 +14,6 @@ function* fetchActions() {
     yield takeEvery('GET_DATA', fetchData);
 }
 
-function spread(){
-    
-}
 
 export default function* rootSaga() {
     yield all([fetchActions()])

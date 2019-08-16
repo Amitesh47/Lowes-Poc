@@ -1,8 +1,8 @@
-export default (state=[],action) => {
-    switch(action.type){
-        case 'RECEIVED_DATA':
-            return action.payload
-        default:
-            return state
-        }
-}
+import { combineReducers } from 'redux'
+import cardReducer from './cardReducer'
+import fetchDataReducer from'./fetchDataReducer'
+
+export default combineReducers({
+    count: cardReducer,
+    wholeData: fetchDataReducer,
+})

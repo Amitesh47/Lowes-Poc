@@ -6,7 +6,8 @@ import {ProductConatinerTag} from './styles'
 
 const ProductConatiner = () => {
 
-    const data1 = useSelector(state => state)
+    const data1 = useSelector(state => state.wholeData)
+    console.log(data1)
     const category = data1[1]
     const wholeData = data1[0]
     const dispatch = useDispatch()

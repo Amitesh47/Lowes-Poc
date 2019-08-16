@@ -12,6 +12,7 @@ const ProductList = (props) => {
 
     const renderData = prodList.map(product=>{
         return <ProductCard 
+                    key={product._id}
                     productDetails={product}
                 />
     })
