@@ -11,6 +11,7 @@ const ProductList = (props) => {
     console.log(prodList)
 
     const renderData = prodList.map(product=>{
+        console.log(typeof(product._id))
         return <ProductCard 
                     key={product._id}
                     productDetails={product}

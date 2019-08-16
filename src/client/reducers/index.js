@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import cardReducer from './cardReducer'
+import cartReducer from './cartReducer'
 import fetchDataReducer from'./fetchDataReducer'
 
 export default combineReducers({
-    count: cardReducer,
+    count: cartReducer,
     wholeData: fetchDataReducer,
 })
