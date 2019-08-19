@@ -3,6 +3,8 @@ import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementCounter, decrementCounter} from '../../actions'
 
+import Discount from "../DiscountComponent"
+
 import {
   ProductTitle,
   ProductDesc,
@@ -31,10 +33,13 @@ const ProductCard = (props) => {
       <CardTag>
         <Card style={{ width: "16.5rem", height: "540px" }} inline>
           <Card.Body data-test="ProductCard">
-            <ProductImage
-              src={productDetails.thumbnail}
-              data-test="ProductImage"
-            />
+            <div>
+              <ProductImage
+                src={productDetails.thumbnail}
+                data-test="ProductImage"
+              />
+              <Discount discount={productDetails.offerMessage} />
+            </div>
             <ProductTitle data-test="ProductTitle">
               {productDetails.name}
             </ProductTitle>
@@ -54,7 +59,7 @@ const ProductCard = (props) => {
             </p>
 
             <ProductPrice data-test="ProductCost">
-              {productDetails.price}
+              ${productDetails.price}
             </ProductPrice>
             <div>
               <AddToCartButon

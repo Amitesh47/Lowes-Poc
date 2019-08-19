@@ -8,10 +8,10 @@ const ProductList = (props) => {
     let {prodListWithCategory}= props
     let prodList=prodListWithCategory.slice(1)
     let category= prodListWithCategory[0].category
-    console.log(prodList)
+    // console.log(prodList)
 
     const renderData = prodList.map(product=>{
-        console.log(typeof(product._id))
+        // console.log(typeof(product._id))
         return <ProductCard 
                     key={product._id}
                     productDetails={product}

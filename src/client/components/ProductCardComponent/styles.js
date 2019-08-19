@@ -19,6 +19,7 @@ let ProductTitle = styled.h3`
 let ProductImage = styled.img`
     width: 241px;
     height: 200px;
+    object-fit: cover
 `;
 
 let ProductDesc = styled.div`
