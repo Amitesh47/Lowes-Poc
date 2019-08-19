@@ -7,11 +7,11 @@ import {ProductConatinerTag} from './styles'
 const ProductConatiner = () => {
 
     const data1 = useSelector(state => state.wholeData)
-    console.log(data1)
+    // console.log(data1)
     const category = data1[1]
     const wholeData = data1[0]
     const dispatch = useDispatch()
-    category ? console.log(category[0]) : null
+    // category ? console.log(category[0]) : null
 
     useEffect(() => {
         dispatch({ type: 'GET_DATA' })
@@ -19,17 +19,13 @@ const ProductConatiner = () => {
 
     const renderData = category ? category.map((cat) => {
         let prodListWithCategory = [{"category":cat}]
-        // console.log(prodList)
         for (let i = 0; i < wholeData.length; i++) {
             if (wholeData[i].category === cat)
-                prodListWithCategory = [...prodListWithCategory,wholeData[i]]
-                // console.log(prodList)               
+                prodListWithCategory = [...prodListWithCategory,wholeData[i]]               
         }
         return <ProductList
                     prodListWithCategory={prodListWithCategory}
                 />
-
-
     }) : null
 
     return (
