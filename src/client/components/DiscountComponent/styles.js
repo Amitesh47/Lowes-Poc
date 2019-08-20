@@ -4,11 +4,12 @@ let DiscountSpan = styled.span`
     position :absolute;
     right:10px;
     top: 10px;
-    color: #ffffff;
+    color: white;
+    font-weight: bold;
     padding: 5px 18px;
     background: rgba(0,0,0,0.2);
     border-radius: 2px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 `;
 
 export {DiscountSpan}

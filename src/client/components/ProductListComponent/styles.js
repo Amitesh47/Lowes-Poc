@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import CardDeck from 'react-bootstrap/CardDeck'
 
 let CategoryTitleTag = styled.h2`
     width: 316px;
@@ -11,4 +12,8 @@ let CategoryTitleTag = styled.h2`
     text-decoration: none solid rgb(34, 34, 34);
 `;
 
-export {CategoryTitleTag}
+let Card = styled(CardDeck)`
+"margin-bottom":"40px"
+`;
+
+export {CategoryTitleTag,Card}

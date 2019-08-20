@@ -1,8 +1,6 @@
-import React, { Fragment, useEffect, useCallback } from "react";
-import CardDeck from 'react-bootstrap/CardDeck'
-
+import React, { Fragment } from "react";
 import ProductCard from '../ProductCardComponent'
-import {CategoryTitleTag} from './styles'
+import {CategoryTitleTag,Card} from './styles'
 
 const ProductList = (props) => {
     let {prodListWithCategory}= props
@@ -21,9 +19,9 @@ const ProductList = (props) => {
     return(
         <Fragment>
             <CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>
-            <CardDeck style={{"margin-bottom":"40px"}}>
+            <Card >
                 {renderData}
-            </CardDeck>
+            </Card>
         </Fragment>
     )
 }

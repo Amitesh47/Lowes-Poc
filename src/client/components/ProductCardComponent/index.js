@@ -1,8 +1,5 @@
-import React, { Fragment, useState, useCallback } from "react";
-import Card from "react-bootstrap/Card";
+import React, { Fragment, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { incrementCounter, decrementCounter} from '../../actions'
-
 import Discount from "../DiscountComponent"
 
 import {
@@ -17,22 +14,22 @@ import {
   CountContainer,
   CartButtonImage,
   Star,
-  CardTag
+  CardTag,
+  ProdCard
 } from "./styles";
 
 const ProductCard = (props) => {
   let productDetails= props.productDetails
   let id = productDetails._id
   let [count,setCount] = useState(1)
-  
   const quantityById = useSelector((state) => state.count.quantityById)
   const dispatch = useDispatch()
-  
+
   return (
     <Fragment>
       <CardTag>
-        <Card style={{ width: "16.5rem", height: "540px" }} inline>
-          <Card.Body data-test="ProductCard">
+        <ProdCard  inline>
+          <ProdCard.Body data-test="ProductCard">
             <div>
               <ProductImage
                 src={productDetails.thumbnail}
@@ -111,8 +108,8 @@ const ProductCard = (props) => {
                 </CartCountButton>
               </CountContainer>
             </div>
-          </Card.Body>
-        </Card>
+          </ProdCard.Body>
+        </ProdCard>
       </CardTag>
     </Fragment>
   );

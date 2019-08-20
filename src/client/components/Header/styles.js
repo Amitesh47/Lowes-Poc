@@ -6,6 +6,11 @@ border: 1px solid #666666;
 background-color: #fff;
 background-size: cover;
 box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+overflow: hidden;
+z-index:1;
+position: fixed;
+top: 0;
+width: 100%;
 `;
 
 let Logo = styled.div`
@@ -44,5 +49,6 @@ width: 32px;
 height: 32px;
 fill: #000000;
 `;
+
 
 export { Nav, Logo, Search, Cart }

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Card from "react-bootstrap/Card";
 
 let CardTag= styled.span`
     margin-bottom: 30px;
@@ -112,6 +113,10 @@ height: 20px;
 fill: #000000;
 `;
 
+let ProdCard =  styled(Card)`
+width: 16.5rem;
+height: 540px;
+`;
 
 export {
     ProductTitle,
@@ -125,5 +130,6 @@ export {
     CountContainer,
     CartButtonImage,
     Star,
-    CardTag
+    CardTag,
+    ProdCard
 };
