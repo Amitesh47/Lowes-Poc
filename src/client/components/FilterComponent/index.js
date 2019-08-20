@@ -17,29 +17,35 @@ import {
   FilterCount
 } from "./styles";
 
+const handleChange=(checkBox)=>{
+  // let checkBox= document.getElementById(id)
+  console.log(checkBox)
+  // if checkBox.checked==true
+}
+
 const Filter = () => {
   const data1 = useSelector(state => state.wholeData)
   const category = data1[1]
   const categoryFilter = useSelector(state => state.categoryFilter)
-  // console.log(categoryFilter)
+  console.log(categoryFilter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })
 }, [])
 // dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
-  const handleChange=(checkBox)=>{
+  // const handleChange=(checkBox)=>{
     // let checkBox= document.getElementById(id)
-    console.log(checkBox)
+    // console.log(checkBox)
     // if checkBox.checked==true
-  }
+  // }
 
   const renderedCategory= category?category.map((cat)=>{
     if(cat === null)
       return null
     return <div>
               <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
-              onClick={()=>{return handleChange(this)}}/>
+              onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}/>
             </div>
   }):null
   return (
@@ -60,7 +66,6 @@ const Filter = () => {
                   src="../../../../utils/assets/addIcon_Filter.png"
                   alt="Add"
                 />
-                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
@@ -202,14 +207,13 @@ const Filter = () => {
       </Accordion>
 
       <FilterDetailsConatiner data-test="FilterDetailsCard">
-        
       {categoryFilter.length!=0?categoryFilter.map(cat=>{
-        <Card style={{ width: "215px" }}>
+        return (<Card style={{ width: "215px" }}>
           <FilterSection>
             {cat}
             <FilterCount>14</FilterCount>
           </FilterSection>
-        </Card>
+        </Card>);
       }):null}
         
         
