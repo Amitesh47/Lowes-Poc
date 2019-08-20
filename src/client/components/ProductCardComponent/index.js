@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux'
-import Discount from "../DiscountComponent"
+import { useDispatch, useSelector } from "react-redux";
+import Discount from "../DiscountComponent";
 
 import {
   ProductTitle,
@@ -18,17 +18,17 @@ import {
   ProdCard
 } from "./styles";
 
-const ProductCard = (props) => {
-  let productDetails= props.productDetails
-  let id = productDetails._id
-  let [count,setCount] = useState(1)
-  const quantityById = useSelector((state) => state.count.quantityById)
-  const dispatch = useDispatch()
+const ProductCard = props => {
+  let productDetails = props.productDetails;
+  let id = productDetails._id;
+  let [count, setCount] = useState(1);
+  const quantityById = useSelector(state => state.count.quantityById);
+  const dispatch = useDispatch();
 
   return (
     <Fragment>
       <CardTag>
-        <ProdCard  inline>
+        <ProdCard inline>
           <ProdCard.Body data-test="ProductCard">
             <div>
               <ProductImage
@@ -61,25 +61,23 @@ const ProductCard = (props) => {
             <div>
               <AddToCartButon
                 data-test="AddToCartButton"
-                onClick={() =>{
-                  const productIdInCart=quantityById.includes(id)
-                  let dispatchObj={
+                onClick={() => {
+                  const productIdInCart = quantityById.includes(id);
+                  let dispatchObj = {
                     type: "ADD_TO_CART",
                     payload: { productId: id, count }
-                  }
+                  };
 
-                  if(productIdInCart){
+                  if (productIdInCart) {
                     // const CartWithoutProd=quantityById.filter((episodeID)=>episodeID!=id)
-                    dispatchObj={
-                      type:'REMOVE_FROM_CART',
+                    dispatchObj = {
+                      type: "REMOVE_FROM_CART",
                       payload: { productId: id, count }
-                    }
+                    };
                   }
 
-                  dispatch(dispatchObj)
-                }
-                  
-                }
+                  dispatch(dispatchObj);
+                }}
               >
                 {quantityById.find(ID => ID == id)
                   ? `Remove from Cart`
@@ -87,24 +85,28 @@ const ProductCard = (props) => {
               </AddToCartButon>
               <CountContainer>
                 <CartCountButton>
-                  <CartButtonImage
-                    data-test="DecrementCountButton"
-                    src="../../../../utils/assets/subIcon.png"
-                    alt="Remove From Cart"
-                    onClick={() => setCount(count - 1)}
-                  />
+                  {quantityById.find(ID => ID == id) ? null : (
+                    <CartButtonImage
+                      data-test="DecrementCountButton"
+                      src="../../../../utils/assets/subIcon.png"
+                      alt="Remove From Cart"
+                      onClick={() => setCount(count - 1)}
+                    />
+                  )}
                   {/* onClick = {() => console.log("Clicked")}/> */}
                   {/* <CartButtonImage src={require("../../../../utils/assets/subIcon.png")} alt="Remove From Cart" />                             */}
                 </CartCountButton>
                 <CartCount>{count}</CartCount>
                 <CartCountButton>
                   {/* <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  */}
-                  <CartButtonImage
-                    data-test="IncrementCountButton"
-                    src="../../../../utils/assets/addIcon.png"
-                    alt="Add To Cart"
-                    onClick={() => setCount(count + 1)}
-                  />
+                  {quantityById.find(ID => ID == id) ? null : (
+                    <CartButtonImage
+                      data-test="IncrementCountButton"
+                      src="../../../../utils/assets/addIcon.png"
+                      alt="Add To Cart"
+                      onClick={() => setCount(count + 1)}
+                    />
+                  )}
                 </CartCountButton>
               </CountContainer>
             </div>
@@ -113,6 +115,6 @@ const ProductCard = (props) => {
       </CardTag>
     </Fragment>
   );
-            };
-            
-            export default ProductCard;
+};
+
+export default ProductCard;

@@ -20,17 +20,26 @@ import {
 const Filter = () => {
   const data1 = useSelector(state => state.wholeData)
   const category = data1[1]
+  const categoryFilter = useSelector(state => state.categoryFilter)
+  // console.log(categoryFilter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })
 }, [])
+// dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
+  const handleChange=(checkBox)=>{
+    // let checkBox= document.getElementById(id)
+    console.log(checkBox)
+    // if checkBox.checked==true
+  }
 
   const renderedCategory= category?category.map((cat)=>{
     if(cat === null)
       return null
     return <div>
-              <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}/>
+              <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
+              onClick={()=>{return handleChange(this)}}/>
             </div>
   }):null
   return (
@@ -174,38 +183,37 @@ const Filter = () => {
           <FilterSectionBottom data-test="FilterListItem">
             Discounts / Offers
             <AddFilterButton data-test="AddFilterButton">
-              <Accordion.Toggle
+              {/* <Accordion.Toggle
                 as={Button}
                 variant="link"
                 eventKey="3"
                 style={{ padding: "0" }}
-              >
+              > */}
                 {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
                 <AddFilterButtonImage
+                  onClick={()=>console.log('hello132')}
                   src="../../../../utils/assets/addIcon_Filter.png"
                   alt="Add"
                 />
-              </Accordion.Toggle>
+              {/* </Accordion.Toggle> */}
             </AddFilterButton>
           </FilterSectionBottom>
-          <Accordion.Collapse eventKey="3">
-            <Card.Body data-test="FilterDropDownBody">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-            </Card.Body>
-          </Accordion.Collapse>
         </Card>
       </Accordion>
 
       <FilterDetailsConatiner data-test="FilterDetailsCard">
+        
+      {categoryFilter.length!=0?categoryFilter.map(cat=>{
         <Card style={{ width: "215px" }}>
           <FilterSection>
-            Cras justo odio
+            {cat}
             <FilterCount>14</FilterCount>
           </FilterSection>
         </Card>
+      }):null}
+        
+        
+        
       </FilterDetailsConatiner>
     </FilterConatiner>
   );

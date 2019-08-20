@@ -7,8 +7,10 @@ import {ProductConatinerTag} from './styles'
 const ProductConatiner = () => {
 
     const data1 = useSelector(state => state.wholeData)
-    // console.log(data1)
-    const category = data1[1]
+    const categoryFilter = useSelector(state => state.categoryFilter)
+    let category=[]
+    // console.log(categoryFilter)
+    categoryFilter.length==0?category = data1[1]:category=categoryFilter
     const wholeData = data1[0]
     const dispatch = useDispatch()
     // category ? console.log(category[0]) : null
