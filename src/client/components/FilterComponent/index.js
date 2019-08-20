@@ -18,13 +18,6 @@ import {
 } from "./styles";
 
 const Filter = () => {
-  let data = {
-    prodName: "Product Name",
-    prodDesc:
-      "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-    prodRating: "10",
-    cost: "$8989.67"
-  };
   const data1 = useSelector(state => state.wholeData)
   const category = data1[1]
   const dispatch = useDispatch()
@@ -34,7 +27,11 @@ const Filter = () => {
 }, [])
 
   const renderedCategory= category?category.map((cat)=>{
-    return <div>{cat}</div>
+    if(cat === null)
+      return null
+    return <div>
+              <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}/>
+            </div>
   }):null
   return (
     <FilterConatiner>

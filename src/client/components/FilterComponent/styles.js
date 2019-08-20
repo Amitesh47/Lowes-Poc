@@ -79,7 +79,10 @@ let FilterCount = styled.div`
 `;
 
 let FilterConatiner = styled.div`
- margin-top: 89px;`;
+ margin-top: 120px;
+ position: fixed;
+ `;
+ 
 
  let FilterDetailsConatiner = styled.div`
  margin-top: 30px;`;

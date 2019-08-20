@@ -19,10 +19,10 @@ const ProductConatiner = () => {
 
     const renderData = category ? category.map((cat) => {
         let prodListWithCategory = [{"category":cat}]
-        for (let i = 0; i < wholeData.length; i++) {
-            if (wholeData[i].category === cat)
-                prodListWithCategory = [...prodListWithCategory,wholeData[i]]               
-        }
+        wholeData ? wholeData.map((data) => {
+            if (data.category === cat)
+            prodListWithCategory = [...prodListWithCategory,data]   
+        }) : null        
         return <ProductList
                     prodListWithCategory={prodListWithCategory}
                 />

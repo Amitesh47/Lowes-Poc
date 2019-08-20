@@ -1,14 +1,12 @@
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import axios from 'axios'
+import createSagaMiddleware from 'redux-saga'
 import reducers from '../client/reducers'
+import rootSaga from '../client/sagas/sagas'
 
 export default (req) => {
-    const axiosInstance = axios.create({
-        baseURL: 'http://react-ssr-api.herokuapp.com',
-        headers: { cookie: req.get('cookie') || ''}
-    });
+    const sagaMiddleware = createSagaMiddleware();
+    const store = createStore(reducers,applyMiddleware(sagaMiddleware));
+    sagaMiddleware.run(rootSaga)
 
-    const store = createStore(reducers, {}, applyMiddleware(thunk.withExtraArgument(axiosInstance)));
     return store
 }
