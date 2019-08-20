@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
@@ -17,7 +17,7 @@ import {
   FilterCount
 } from "./styles";
 
-const handleChange=(checkBox)=>{
+const handleChange = (checkBox) => {
   // let checkBox= document.getElementById(id)
   console.log(checkBox)
   // if checkBox.checked==true
@@ -32,22 +32,28 @@ const Filter = () => {
 
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })
-}, [])
-// dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
-  // const handleChange=(checkBox)=>{
-    // let checkBox= document.getElementById(id)
-    // console.log(checkBox)
-    // if checkBox.checked==true
-  // }
+  }, [])
 
-  const renderedCategory= category?category.map((cat)=>{
-    if(cat === null)
+  let getCheck = (e,cat) => {
+    console.log(e.target.id)
+    let check = document.getElementById(e.target.id)
+    if (check.checked == true) {
+      dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })
+    } else {
+      dispatch({ type: 'CATEGORY_FILTER_OFF', payload:cat })
+    }
+  }
+
+  const renderedCategory = category ? category.map((cat) => {
+    if (cat === null)
       return null
     return <div>
-              <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
-              onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}/>
-            </div>
-  }):null
+      <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
+        // onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
+        onClick={() => { return getCheck(window.event,cat) }}
+      />
+    </div>
+  }) : null
   return (
     <FilterConatiner>
       <Accordion style={{ width: "215px" }} data-test="FilterListCard">
@@ -93,7 +99,7 @@ const Filter = () => {
           </FilterSection>
           <Accordion.Collapse eventKey="1">
             <Card.Body data-test="FilterDropDownBody">
-            <Form><div key={`custom-checkbox`} className="mb-3">
+              <Form><div key={`custom-checkbox`} className="mb-3">
                 <Form.Check
                   custom
                   label="1-100"
@@ -112,7 +118,7 @@ const Filter = () => {
                   type="checkbox"
                   id={`custom-checkbox-highPrice`}
                 />
-                
+
                 {/* Reference for disabled checkbox */}
                 <Form.Check
                   custom
@@ -143,7 +149,7 @@ const Filter = () => {
           </FilterSection>
           <Accordion.Collapse eventKey="2">
             <Card.Body data-test="FilterDropDownBody">
-            <Form><div key={`custom-checkbox`} className="mb-3">
+              <Form><div key={`custom-checkbox`} className="mb-3">
                 <Form.Check
                   custom
                   label="5"
@@ -194,12 +200,12 @@ const Filter = () => {
                 eventKey="3"
                 style={{ padding: "0" }}
               > */}
-                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
-                <AddFilterButtonImage
-                  onClick={()=>console.log('hello132')}
-                  src="../../../../utils/assets/addIcon_Filter.png"
-                  alt="Add"
-                />
+              {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+              <AddFilterButtonImage
+                onClick={() => console.log('hello132')}
+                src="../../../../utils/assets/addIcon_Filter.png"
+                alt="Add"
+              />
               {/* </Accordion.Toggle> */}
             </AddFilterButton>
           </FilterSectionBottom>
@@ -207,17 +213,17 @@ const Filter = () => {
       </Accordion>
 
       <FilterDetailsConatiner data-test="FilterDetailsCard">
-      {categoryFilter.length!=0?categoryFilter.map(cat=>{
-        return (<Card style={{ width: "215px" }}>
-          <FilterSection>
-            {cat}
-            <FilterCount>14</FilterCount>
-          </FilterSection>
-        </Card>);
-      }):null}
-        
-        
-        
+        {categoryFilter.length != 0 ? categoryFilter.map(cat => {
+          return (<Card style={{ width: "215px" }}>
+            <FilterSection>
+              {cat}
+              <FilterCount>14</FilterCount>
+            </FilterSection>
+          </Card>);
+        }) : null}
+
+
+
       </FilterDetailsConatiner>
     </FilterConatiner>
   );
