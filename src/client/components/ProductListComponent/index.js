@@ -15,15 +15,41 @@ const ProductList = ({prodListWithCategory}) => {
     let rating =[]
     ratingFilter.length==0?rating = ratingFilterDefault:rating=ratingFilter
 
+    const priceFilter = useSelector(state => state.priceFilter)
+    const priceFilterDefault = [...Array(300).keys()]
+    let price =[]
+    priceFilter.length==0?price = priceFilterDefault:price=priceFilter
+
+    const discountFilter = useSelector(state => state.discountFilter)
+    // const discountFilterDefault = ['discount',null]
+    // let discount =[]
+    // discountFilter.length==0?discount = discountFilterDefault:discount=discountFilter
+
 
     const renderData = prodList.map(product=>{
         // console.log(typeof(product._id))
         return rating.map(rating=>{
             if (rating == product.ratingInfo.rating){
-                return <ProductCard 
-                            key={product._id}
-                            productDetails={product}
-                        />
+                return price.map(price=>{
+                    if (price == product.price){
+                        if(discountFilter.length==0) 
+                            return (
+                                    <ProductCard 
+                                        key={product._id}
+                                        productDetails={product}
+                                    />
+                                    )
+                        else
+                            if(product.offerMessage!=null)
+                            return (
+                                    <ProductCard 
+                                    key={product._id}
+                                    productDetails={product}
+                                    />
+                                )
+                    }
+                })
+                
             }
         })            
     })
