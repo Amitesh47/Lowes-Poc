@@ -17,30 +17,41 @@ import {
   FilterCount
 } from "./styles";
 
-const handleChange = (checkBox) => {
-  // let checkBox= document.getElementById(id)
-  console.log(checkBox)
-  // if checkBox.checked==true
-}
+
 
 const Filter = () => {
   const data1 = useSelector(state => state.wholeData)
   const category = data1[1]
   const categoryFilter = useSelector(state => state.categoryFilter)
-  console.log(categoryFilter)
+  const ratingFilter = useSelector(state => state.ratingFilter)
+  console.log(ratingFilter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch({ type: 'GET_DATA' })
   }, [])
 
-  let getCheck = (e,cat) => {
-    console.log(e.target.id)
+  let getCategoryCheck = (e,cat) => {
     let check = document.getElementById(e.target.id)
     if (check.checked == true) {
       dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })
     } else {
       dispatch({ type: 'CATEGORY_FILTER_OFF', payload:cat })
+    }
+  }
+
+  let getRatingCheck = (e) => {
+    // console.log(e.target.id)
+    // console.log(typeof(e.target.id))
+    let check = document.getElementById(e.target.id)
+    if (check.checked == true) {
+      dispatch({ type: 'RATING_FILTER_ON', 
+                payload: e.target.id
+              })
+    } else {
+      dispatch({ type: 'RATING_FILTER_OFF',
+                payload: e.target.id
+              })
     }
   }
 
@@ -50,10 +61,11 @@ const Filter = () => {
     return <div>
       <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
         // onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
-        onClick={() => { return getCheck(window.event,cat) }}
+        onClick={() => { return getCategoryCheck(window.event,cat) }}
       />
     </div>
   }) : null
+  
   return (
     <FilterConatiner>
       <Accordion style={{ width: "215px" }} data-test="FilterListCard">
@@ -152,33 +164,38 @@ const Filter = () => {
               <Form><div key={`custom-checkbox`} className="mb-3">
                 <Form.Check
                   custom
-                  label="5"
-                  type="checkbox"
-                  id={`custom-checkbox-5`}
-                />
-                <Form.Check
-                  custom
                   label="4"
                   type="checkbox"
-                  id={`custom-checkbox-4`}
+                  id={'4'}
+                  onClick = {() => {return getRatingCheck(window.event)}}
                 />
                 <Form.Check
                   custom
                   label="3"
                   type="checkbox"
-                  id={`custom-checkbox-3`}
+                  id={`3`}
+                  onClick = {() => {return getRatingCheck(window.event)}}
                 />
                 <Form.Check
                   custom
                   label="2"
                   type="checkbox"
-                  id={`custom-checkbox-2`}
+                  id={`2`}
+                  onClick = {() => {return getRatingCheck(window.event)}}
                 />
                 <Form.Check
                   custom
                   label="1"
                   type="checkbox"
-                  id={`custom-checkbox-1`}
+                  id={`1`}
+                  onClick = {() => {return getRatingCheck(window.event)}}
+                />
+                <Form.Check
+                  custom
+                  label="0"
+                  type="checkbox"
+                  id={`0`}
+                  onClick = {() => {return getRatingCheck(window.event)}}
                 />
                 {/* Reference for disabled checkbox */}
                 <Form.Check
@@ -217,6 +234,15 @@ const Filter = () => {
           return (<Card style={{ width: "215px" }}>
             <FilterSection>
               {cat}
+              <FilterCount>14</FilterCount>
+            </FilterSection>
+          </Card>);
+        }) : null}
+
+      {ratingFilter.length != 0 ? ratingFilter.map(rating => {
+          return (<Card style={{ width: "215px" }}>
+            <FilterSection>
+              {rating}
               <FilterCount>14</FilterCount>
             </FilterSection>
           </Card>);
