@@ -8,10 +8,10 @@ const ProductList = ({prodListWithCategory}) => {
     // let {prodListWithCategory}= props
     let prodList=prodListWithCategory.slice(1)
     let category= prodListWithCategory[0].category
-    console.log(prodList)
+    // console.log(prodList)
 
     const ratingFilter = useSelector(state => state.ratingFilter)
-    const ratingFilterDefault = [1,2,3,4,5]
+    const ratingFilterDefault = [0,1,2,3,4]
     let rating =[]
     ratingFilter.length==0?rating = ratingFilterDefault:rating=ratingFilter
 
