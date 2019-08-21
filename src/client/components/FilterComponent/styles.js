@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 let FilterHeader = styled.div`
     width: 215px;
+    @media (max-width: 450px) {
+        width: 300px;
+    }
     height: 42px;
     padding: 0px 15px;
     border: 1px solid #428bca;
@@ -17,6 +20,9 @@ let FilterHeader = styled.div`
 
 let FilterSection = styled.div`
     width: 215px;
+    @media (max-width: 450px) {
+        width: 300px;
+    }
     height: 42px;
     padding: 0px 11px;
     border: 1px solid #dddddd;
@@ -29,8 +35,11 @@ let FilterSection = styled.div`
 
 `;
 
-let FilterSectionBottom = styled(FilterSection)`
+let FilterSectionBottom = styled.div`
     width: 215px;
+    @media (max-width: 450px) {
+        width: 300px;
+    }   
     height: 42px;
     padding: 0px 15px;
     border: 1px solid #dddddd;
@@ -80,7 +89,14 @@ let FilterCount = styled.div`
 
 let FilterConatiner = styled.div`
  margin-top: 120px;
- position: fixed;
+ width:215px;
+ position:fixed;
+ @media (max-width: 450px) {
+    width: 300px;
+    height: 120px;
+    margin-top:100px;
+    position: relative;
+  }
  `;
  
 

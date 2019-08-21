@@ -6,6 +6,11 @@ let CardTag= styled.span`
 `;
 
 let ProductTitle = styled.h3`
+@media (max-width: 450px) {
+    width: 145px;
+    height: 33px;
+    font-size: 19px;
+  }
     width: 228px;
     height: 64px;
     font-family: Arial;
@@ -18,6 +23,10 @@ let ProductTitle = styled.h3`
 `;
 
 let ProductImage = styled.img`
+@media (max-width: 450px) {
+    width: 274px;
+    height: 130px;
+  }
     position :relative;
     right:10px;
     top: -10px;
@@ -26,6 +35,11 @@ let ProductImage = styled.img`
 `;
 
 let ProductDesc = styled.div`
+@media (max-width: 450px) {
+    width: 149px;
+    height: 0px;
+    font-size: 12px;
+  }
     width: 224px;
     height: 105px;
     font-family: Arial;
@@ -42,6 +56,9 @@ let ProductRatings = styled.span`
     height: 27px;
     font-family: Arial;
     font-size: 23px;
+    @media (max-width: 450px) {
+        font-size: 14px;
+    }
     color: #222222;
     font-weight: 400;
     text-decoration: none solid rgb(34, 34, 34);
@@ -52,6 +69,9 @@ let ProductPrice = styled.div`
     height: 27px;
     font-family: Arial;
     font-size: 23px;
+    @media (max-width: 450px) {
+        font-size: 16px;
+    }
     color: #222222;
     font-weight: 400;
     text-decoration: none solid rgb(34, 34, 34);
@@ -59,6 +79,9 @@ let ProductPrice = styled.div`
 
 let AddToCartButon = styled.button`
     width: 130px;
+    @media (max-width: 450px) {
+        width: 85px;
+    }
     height: 34px;
     border: 1px solid #357ebd;
     border-radius: 4px;
@@ -109,6 +132,10 @@ let CartButtonImage = styled.img`
 
 let Star = styled.img`
 width: 20px;
+@media (max-width: 450px) {
+    width: 22px;
+    height:22px;
+}
 height: 20px;
 fill: #000000;
 `;
@@ -116,6 +143,10 @@ fill: #000000;
 let ProdCard =  styled(Card)`
 width: 16.5rem;
 height: 540px;
+@media (max-width: 450px) {
+    width: 18.5rem;
+    height: 306px
+}
 `;
 
 export {

@@ -210,14 +210,6 @@ const Filter = () => {
                   id={`0`}
                   onClick={() => { return getRatingCheck(window.event) }}
                 />
-                {/* Reference for disabled checkbox */}
-                <Form.Check
-                  custom
-                  disabled
-                  label="Reference(disabled)"
-                  type="checkbox"
-                  id={`custom-checkbox-disabled`}
-                />
               </div></Form>
             </Card.Body>
           </Accordion.Collapse>
