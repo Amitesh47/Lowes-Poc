@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 let DiscountSpan = styled.span`
     position :absolute;
+    @media (max-width: 450px) {
+        right:11px;
+    }
     right:10px;
     top: 10px;
     color: white;
