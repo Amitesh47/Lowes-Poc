@@ -6,6 +6,12 @@ border: 1px solid #666666;
 background-color: #fff;
 background-size: cover;
 box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+@media (max-width: 450px) {
+    overflow: hidden;
+    z-index:1;
+    position: fixed;
+    height: 70px;
+  }
 overflow: hidden;
 z-index:1;
 position: fixed;
@@ -15,10 +21,13 @@ width: 100%;
 
 let Logo = styled.div`
 margin-top: 15px;
-width: 488px;
+@media (max-width: 450px) {
+    width: 200px;
+    font-size: 30px;
+  }
+font-size: 44px;
 height: 50px
 font-family: Arial;
-font-size: 44px;
 color: #6f6f6f;
 font-weight: 400;
 text-decoration: none solid rgb(111, 111, 111);
@@ -28,7 +37,10 @@ text-decoration: none solid rgb(111, 111, 111);
 
 let Search = styled.input`
 margin-top: 20px;
-// width: 354px;
+@media (max-width: 450px) {
+    width: 100px;
+    height:35px;
+  }
 height: 56px;
 padding: 0px 10px;
 border: 1px solid #c8c8c8;
@@ -45,6 +57,11 @@ text-decoration: none solid rgb(71, 71, 71);
 
 let Cart = styled.img`
 margin-top:30px;
+@media (max-width: 450px) {
+    width: 25px;
+    margin-left: -24px;
+    height: 25px;
+  }
 width: 32px;
 height: 32px;
 fill: #000000;
