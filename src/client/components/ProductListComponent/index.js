@@ -25,9 +25,9 @@ const ProductList = ({prodListWithCategory}) => {
     // let discount =[]
     // discountFilter.length==0?discount = discountFilterDefault:discount=discountFilter
 
-
-    const renderData = prodList.map(product=>{
-        // console.log(typeof(product._id))
+    let renderData=null
+    renderData = prodList.map(product=>{
+        // console.log(product)
         return rating.map(rating=>{
             if (rating == product.ratingInfo.rating){
                 return price.map(price=>{
@@ -47,19 +47,38 @@ const ProductList = ({prodListWithCategory}) => {
                                     productDetails={product}
                                     />
                                 )
+                            else return null
                     }
+                    else return null
                 })
                 
             }
+            else return null
         })            
     })
 
+    console.log(` hello1 ${category}`)
+    console.log(renderData)
+
+    let a=renderData.map(array=>array.some(function (el) {return el != null}))
+    let check=null
+    for(let i=0;i<a.length;i++){
+        if (a[i]==true)
+            check=true 
+    }
+    
+    console.log(check)
+
+
     return(
+        
         <Fragment>
-            <CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>
-            <Card >
-                {renderData}
-            </Card>
+            
+            {check ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null}
+            {/* {renderData.some(function (el) {return el !== null}) ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null} */}
+                {check?<Card >
+                    {renderData}
+                </Card>:null}
         </Fragment>
     )
 }
