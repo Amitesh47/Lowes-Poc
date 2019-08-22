@@ -29,10 +29,26 @@ const ProductConatiner = () => {
                     prodListWithCategory={prodListWithCategory}
                 />
     }) : null
-
+    console.log({renderData})
+    
+    // let a=renderData.map( value =>{
+    //     if (value.key ==null){
+    //         return false
+    //     }
+    //     else
+    //         return true
+    // })
+    // let check=null
+    // if (renderData){
+    //     for(let i=0;i<a.length;i++){
+    //         if (a[i]==true)
+    //             check=true 
+    //     }
+    // }
+    
     return (
         <ProductConatinerTag>
-            {renderData}
+            {(renderData)?renderData:<h3>Populating List!</h3>}
         </ProductConatinerTag>
     )
 }
