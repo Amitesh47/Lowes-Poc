@@ -25,7 +25,7 @@ const Filter = () => {
   const categoryFilter = useSelector(state => state.categoryFilter)
   const ratingFilter = useSelector(state => state.ratingFilter)
 
-  const priceFilter = []
+  const priceFilter = useSelector(state => state.priceRange)
   // console.log("Price Filter :", priceFilter)
 
   const dispatch = useDispatch()
@@ -61,10 +61,18 @@ const Filter = () => {
         type: 'PRICE_FILTER_ON',
         payload: ans
       })
+      dispatch({
+        type: 'RANGE_ON',
+        payload: check
+      })
     } else {
       dispatch({
         type: 'PRICE_FILTER_OFF',
         payload: ans
+      })
+      dispatch({
+        type: 'RANGE_OFF',
+        payload: check
       })
     }
   }
@@ -88,8 +96,6 @@ const Filter = () => {
   }
 
   let getDiscountCheck = (e) => {
-    // console.log(e.target.id)
-    // console.log(typeof(e.target.id))
     let check = document.getElementById(e.target.id)
     if (check.checked == true) {
       dispatch({ type: 'CATEGORY_DISCOUNT_ON' })
@@ -282,7 +288,6 @@ const Filter = () => {
           return (<Card style={{ width: "215px" }}>
             <FilterSection>
               {cat}
-              <FilterCount>14</FilterCount>
             </FilterSection>
           </Card>);
         }) : null}
@@ -291,7 +296,7 @@ const Filter = () => {
           return (<Card style={{ width: "215px" }}>
             <FilterSection>
               {rating}
-              <FilterCount>14</FilterCount>
+            
             </FilterSection>
           </Card>);
         }) : null}
@@ -300,7 +305,7 @@ const Filter = () => {
           return (<Card style={{ width: "215px" }}>
             <FilterSection>
               {price}
-              <FilterCount>14</FilterCount>
+           
             </FilterSection>
           </Card>);
         }) : null}
