@@ -25,9 +25,11 @@ const Filter = () => {
   const category = data1[1]
   const categoryFilter = useSelector(state => state.categoryFilter)
   const ratingFilter = useSelector(state => state.ratingFilter)
+
   const priceFilter = useSelector(state => state.priceFilter)
   let priceFilterProducts = []
   // console.log("Price Filter :", priceFilter)
+
   const dispatch = useDispatch()
 
   useEffect(() => {

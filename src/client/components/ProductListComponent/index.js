@@ -57,8 +57,8 @@ const ProductList = ({prodListWithCategory}) => {
         })            
     })
 
-    console.log(` hello1 ${category}`)
-    console.log(renderData)
+    // console.log(` hello1 ${category}`)
+    // console.log(renderData)
 
     let a=renderData.map(array=>array.some(function (el) {return el != null}))
     let check=null
@@ -66,8 +66,8 @@ const ProductList = ({prodListWithCategory}) => {
         if (a[i]==true)
             check=true 
     }
-    
-    console.log(check)
+
+    // console.log(check)
 
 
     return(
