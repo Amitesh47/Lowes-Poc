@@ -7,11 +7,12 @@ import filterPriceReducer from'./filterPriceReducer'
 import filterDiscountReducer from'./filterDiscountReducer'
 
 
+
 export default combineReducers({
     count: cartReducer,
     wholeData: fetchDataReducer,
     categoryFilter: filterCategoryReducer,
     ratingFilter: filterRatingReducer,
     priceFilter: filterPriceReducer,
-    discountFilter: filterDiscountReducer
+    discountFilter: filterDiscountReducer,
 })

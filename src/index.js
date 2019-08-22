@@ -1,19 +1,11 @@
 import 'babel-polyfill'
 import express from 'express'
-import proxy from 'express-http-proxy'
 import { matchRoutes } from 'react-router-config'
 import Routes from './client/Routes'
-import renderer from './helpers/renderer'
-import createStore from './helpers/createStore'
+import renderer from './server/renderer'
+import createStore from './server/createStore'
 
 const app = express();
-
-// app.use('/api', proxy('http://react-ssr-api.herokuapp.com', {
-//     proxyReqOptDecorator(opts){
-//         opts.headers['x-forwarded-host'] = 'localhost:3000'
-//         return opts;
-//     }
-// }));
 
 app.use(express.static('public'));
 //It tells express that the files inside the public dir are accessible to outside world

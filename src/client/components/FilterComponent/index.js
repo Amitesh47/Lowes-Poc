@@ -21,10 +21,13 @@ import {
 
 const Filter = () => {
   const data1 = useSelector(state => state.wholeData)
+  const completeData = data1[0];
   const category = data1[1]
   const categoryFilter = useSelector(state => state.categoryFilter)
   const ratingFilter = useSelector(state => state.ratingFilter)
-  console.log(ratingFilter)
+  const priceFilter = useSelector(state => state.priceFilter)
+  let priceFilterProducts = []
+  // console.log("Price Filter :", priceFilter)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -65,6 +68,37 @@ const Filter = () => {
       dispatch({ type: 'CATEGORY_DISCOUNT_ON' })
     } else {
       dispatch({ type: 'CATEGORY_DISCOUNT_OFF' })
+    }
+  }
+
+  let getPriceCheck = (e) => {
+    // console.log(e.target.name)
+   
+
+     completeData ? completeData.map((data) => {
+      // console.log("Data: " , data)
+      if (data.price <= e.target.id) {
+        priceFilterProducts.push(data)
+      }
+    }) : null
+
+    
+    let check = document.getElementById(e.target.id)
+    
+
+    if (check.checked == true) {
+      console.log("Price products: ", priceFilterProducts)
+      dispatch({
+        type: 'PRICE_FILTER_ON',
+        payload: e.target.name
+      })
+    } else {
+      priceFilterProducts.filter(data => (data >= e.target.id))
+      console.log("Price products: ", priceFilterProducts)
+      dispatch({
+        type: 'PRICE_FILTER_OFF',
+        payload: e.target.name
+      })
     }
   }
 
@@ -128,20 +162,26 @@ const Filter = () => {
                 <Form.Check
                   custom
                   label="1-100"
+                  name="1-100"
                   type="checkbox"
-                  id={`custom-checkbox-lowPrice`}
+                  id="100"
+                  onClick={() => { return getPriceCheck(window.event) }}
                 />
                 <Form.Check
                   custom
                   label="101-200"
+                  name="101-200"
                   type="checkbox"
-                  id={`custom-checkbox-medPrice`}
+                  id="200"
+                  onClick={() => { return getPriceCheck(window.event) }}
                 />
                 <Form.Check
                   custom
                   label="201-300"
+                  name="201-300"
                   type="checkbox"
-                  id={`custom-checkbox-highPrice`}
+                  id="300"
+                  onClick={() => { return getPriceCheck(window.event) }}
                 />
 
                 {/* Reference for disabled checkbox */}
@@ -151,6 +191,7 @@ const Filter = () => {
                   label="Reference(disabled)"
                   type="checkbox"
                   id={`custom-checkbox-disabled`}
+
                 />
               </div></Form>
             </Card.Body>
@@ -260,6 +301,15 @@ const Filter = () => {
           return (<Card style={{ width: "215px" }}>
             <FilterSection>
               {rating}
+              <FilterCount>14</FilterCount>
+            </FilterSection>
+          </Card>);
+        }) : null}
+
+        {priceFilter.length != 0 ? priceFilter.map(price => {
+          return (<Card style={{ width: "215px" }}>
+            <FilterSection>
+              {price}
               <FilterCount>14</FilterCount>
             </FilterSection>
           </Card>);
