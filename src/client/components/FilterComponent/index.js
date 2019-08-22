@@ -21,13 +21,11 @@ import {
 
 const Filter = () => {
   const data1 = useSelector(state => state.wholeData)
-  const completeData = data1[0];
   const category = data1[1]
   const categoryFilter = useSelector(state => state.categoryFilter)
   const ratingFilter = useSelector(state => state.ratingFilter)
 
-  const priceFilter = useSelector(state => state.priceFilter)
-  let priceFilterProducts = []
+  const priceFilter = []
   // console.log("Price Filter :", priceFilter)
 
   const dispatch = useDispatch()
@@ -44,6 +42,33 @@ const Filter = () => {
       dispatch({ type: 'CATEGORY_FILTER_OFF', payload: cat })
     }
   }
+
+  let getPriceCheck = (e) => {
+    let check = document.getElementById(e.target.id).name
+    let check1 = document.getElementById(e.target.id)
+    let first1 = check.slice(0, -3)
+    let start = first1.slice(0, -1)
+    let end = check.slice(first1.length)
+    start = parseInt(start)
+    end = parseInt(end)
+    var ans = [];
+    for (let i = start; i <= end; i++) {
+      ans.push(i);
+    }
+
+    if (check1.checked == true) {
+      dispatch({
+        type: 'PRICE_FILTER_ON',
+        payload: ans
+      })
+    } else {
+      dispatch({
+        type: 'PRICE_FILTER_OFF',
+        payload: ans
+      })
+    }
+  }
+
 
   let getRatingCheck = (e) => {
     // console.log(e.target.id)
@@ -73,36 +98,6 @@ const Filter = () => {
     }
   }
 
-  let getPriceCheck = (e) => {
-    // console.log(e.target.name)
-   
-
-     completeData ? completeData.map((data) => {
-      // console.log("Data: " , data)
-      if (data.price <= e.target.id) {
-        priceFilterProducts.push(data)
-      }
-    }) : null
-
-    
-    let check = document.getElementById(e.target.id)
-    
-
-    if (check.checked == true) {
-      console.log("Price products: ", priceFilterProducts)
-      dispatch({
-        type: 'PRICE_FILTER_ON',
-        payload: e.target.name
-      })
-    } else {
-      priceFilterProducts.filter(data => (data >= e.target.id))
-      console.log("Price products: ", priceFilterProducts)
-      dispatch({
-        type: 'PRICE_FILTER_OFF',
-        payload: e.target.name
-      })
-    }
-  }
 
   const renderedCategory = category ? category.map((cat) => {
     if (cat === null)
@@ -154,6 +149,7 @@ const Filter = () => {
                   src="../../../../utils/assets/addIcon_Filter.png"
                   alt="Add"
                 />
+
                 {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
               </Accordion.Toggle>
             </AddFilterButton>
@@ -186,15 +182,7 @@ const Filter = () => {
                   onClick={() => { return getPriceCheck(window.event) }}
                 />
 
-                {/* Reference for disabled checkbox */}
-                <Form.Check
-                  custom
-                  disabled
-                  label="Reference(disabled)"
-                  type="checkbox"
-                  id={`custom-checkbox-disabled`}
 
-                />
               </div></Form>
             </Card.Body>
           </Accordion.Collapse>
@@ -323,6 +311,6 @@ const Filter = () => {
     </FilterConatiner>
   );
 
-};
+}
 
-export default Filter;
+export default Filter
