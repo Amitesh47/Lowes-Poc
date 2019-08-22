@@ -1,7 +1,6 @@
 export default (state = [], action) => {
     switch (action.type) {
         case 'PRICE_FILTER_ON':{
-            console.log("Hello red")
             return [...state,...action.payload]
         }
         case 'PRICE_FILTER_OFF':{

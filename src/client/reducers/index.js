@@ -5,7 +5,7 @@ import filterCategoryReducer from'./filterCategoryReducer'
 import filterRatingReducer from'./filterRatingReducer'
 import filterPriceReducer from'./filterPriceReducer'
 import filterDiscountReducer from'./filterDiscountReducer'
-
+import filterPriceRangeReducer from './filterPriceRangeReducer'
 
 
 export default combineReducers({
@@ -15,4 +15,5 @@ export default combineReducers({
     ratingFilter: filterRatingReducer,
     priceFilter: filterPriceReducer,
     discountFilter: filterDiscountReducer,
+    priceRange: filterPriceRangeReducer
 })
