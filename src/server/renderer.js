@@ -41,12 +41,13 @@ export default (req, store, context) => {
     </head>
     <body>
         <div id = "root"> ${content} </div>
-        <script>window.INITIAL_STATE = ${serialize(store.getState())}</script>
-        <script src="bundle.js"></script> 
+        <script>window.INITIAL_STATE = ${serialize(store.getState())}</script> 
+        <script src="bundle.js"></script>
         <script
             src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
             crossorigin
         />
+        
     </body>
     </html>
     `;
