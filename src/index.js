@@ -5,6 +5,7 @@ import Routes from './client/Routes'
 import renderer from './server/renderer'
 import createStore from './server/createStore'
 
+
 const app = express();
 
 app.use(express.static('public'));

@@ -10,11 +10,19 @@ import createSagaMiddleware from 'redux-saga'
 import Routes from './Routes'
 import reducers from './reducers'
 import rootSaga from './sagas/sagas'
+import axe from 'react-axe'
 
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducers,applyMiddleware(sagaMiddleware));
  sagaMiddleware.run(rootSaga)
+
+// runs React-axe for production mode 
+if(process.env.NODE_ENV !== "production"){
+    axe(React,ReactDOM,1000)
+}
+
+
 
 //Hydration means replacing something in an already rendered file from the server.
 //Since the server side html doc is already rendered , the client.js boots up the client side

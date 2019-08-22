@@ -113,6 +113,7 @@ const ProductCard = props => {
           </ProdCard.Body>
         </ProdCard>
       </CardTag>
+      <img src="" />
     </Fragment>
   );
 };
