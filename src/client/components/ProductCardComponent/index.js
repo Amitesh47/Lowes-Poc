@@ -34,6 +34,7 @@ const ProductCard = props => {
               <ProductImage
                 src={productDetails.thumbnail}
                 data-test="ProductImage"
+                alt={productDetails.name}
               />
               <Discount discount={productDetails.offerMessage} />
             </div>
@@ -45,11 +46,11 @@ const ProductCard = props => {
             </ProductDesc>
 
             <p>
-              <Star src="../../../../utils/assets/star.png" />
-              <Star src="../../../../utils/assets/star.png" />
-              <Star src="../../../../utils/assets/star.png" />
-              <Star src="../../../../utils/assets/star.png" />
-              <Star src="../../../../utils/assets/star.png" />
+              <Star src="../../../../utils/assets/star.png" alt="star"/>
+              <Star src="../../../../utils/assets/star.png"  alt="star"/>
+              <Star src="../../../../utils/assets/star.png" alt="star"/>
+              <Star src="../../../../utils/assets/star.png" alt="star"/>
+              <Star src="../../../../utils/assets/star.png" alt="star"/>
               <ProductRatings data-test="ProductRatings">
                 ( {productDetails.ratingInfo.userCount} )
               </ProductRatings>
@@ -113,7 +114,6 @@ const ProductCard = props => {
           </ProdCard.Body>
         </ProdCard>
       </CardTag>
-      <img src="" />
     </Fragment>
   );
 };
