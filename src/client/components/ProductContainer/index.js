@@ -23,7 +23,7 @@ const ProductConatiner = () => {
         let prodListWithCategory = [{"category":cat}]
         wholeData ? wholeData.map((data) => {
             if (data.category === cat)
-            prodListWithCategory = [...prodListWithCategory,data]   
+                prodListWithCategory = [...prodListWithCategory,data]   
         }) : null        
         return <ProductList
                     prodListWithCategory={prodListWithCategory}
