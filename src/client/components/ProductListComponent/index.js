@@ -61,8 +61,18 @@ const ProductList = ({prodListWithCategory}) => {
     // console.log(renderData)
 
     let a=renderData.map(array=>array.some(function (el) {return el != null}))
+
+    // let a=renderData.map(array=>{
+    //     if(array){   console.log('hello2')
+    //                 array.map(arrayPrice=>arrayPrice.some(function (el2) {return el2 != null}))
+    //             }
+    //     console.log('hello2') 
+    //     return array.some(function (el) {return el != null})
+    // })
+
     console.log('hello')
     console.log(renderData)
+    console.log(a)
     let check=null
     for(let i=0;i<a.length;i++){
         if (a[i]==true)
