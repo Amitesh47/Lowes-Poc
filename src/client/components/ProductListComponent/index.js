@@ -93,8 +93,8 @@ const ProductList = ({prodListWithCategory}) => {
             
             {(check && renderData.length) ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null}
             {/* {renderData.some(function (el) {return el !== null}) ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null} */}
-            {console.log(renderData.length)}
-            {console.log(renderData)}
+            {/* {console.log(renderData.length)}
+            {console.log(renderData)} */}
             {check ?<Card >
                     {renderData}
                 </Card>:null}

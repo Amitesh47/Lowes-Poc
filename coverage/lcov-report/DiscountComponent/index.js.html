@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for Header/index.js</title>
+    <title>Code coverage report for DiscountComponent/index.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\prettify.css" />
     <link rel="stylesheet" href="..\base.css" />
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\index.html">All files</a> / <a href="index.html">Header</a> index.js
+      <a href="..\index.html">All files</a> / <a href="index.html">DiscountComponent</a> index.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>1/4</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -68,27 +68,19 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,32 +91,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react'
-import { Nav, Logo, Search, Cart } from './styles';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import { useSelector } from 'react-redux'
 &nbsp;
+import {
+    DiscountSpan
+  } from "./styles";
 &nbsp;
-&nbsp;
-&nbsp;
-const Header = () =&gt; {
-    const cartCount = useSelector((state) =&gt; state.count.totalCount)
-    console.log(cartCount)
-    return (
-        &lt;Nav data-test="getHeader"&gt;
-            &lt;Container&gt;
-                &lt;Row&gt;
-                    &lt;Col xs={5} sm={5} lg={6} &gt;&lt;Logo data-test="getLogo"&gt;Poc-Shop&lt;/Logo&gt;&lt;/Col&gt;
-                    &lt;Col xs={3} sm={3} lg={{ span: 2, offset: 2 }}&gt;&lt;Search data-test="getSearch" placeholder="Search" /&gt;&lt;/Col&gt;
-                    &lt;Col xs={{ span: 2, offset: 2 }} sm={{ span: 2, offset: 2 }} lg={{ span: 1, offset: 1 }}&gt;&lt;Cart data-test="getCart" src='./utils/assets/cart.png' alt="Cart" /&gt;{cartCount}&lt;/Col&gt;
-                &lt;/Row&gt;
-            &lt;/Container&gt;
-        &lt;/Nav&gt;
+const Discount = <span class="fstat-no" title="function not covered" >({</span> discount }) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!discount) {</span>
+        //loading not started yet
+        // return &lt;span className="stats"&gt;Loading&lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >        return null</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return (</span>
+        &lt;DiscountSpan&gt;
+            {/* {stats.error &amp;&amp; 'Error!'}
+            {stats.isLoading &amp;&amp; 'Loading'}
+            {stats.downloads !== null &amp;&amp; `${stats.downloads}`} */}
+            {discount}
+        &lt;/DiscountSpan&gt;
     )
-};
+}
 &nbsp;
-export default Header</pre></td></tr>
+export default Discount;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
