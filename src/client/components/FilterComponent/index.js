@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
@@ -285,11 +285,13 @@ const Filter = () => {
 
       <FilterDetailsConatiner data-test="FilterDetailsCard">
         {categoryFilter.length != 0 ? categoryFilter.map(cat => {
-          return (<Card style={{ width: "215px" }}>
-            <FilterSection>
-              {cat}
-            </FilterSection>
-          </Card>);
+          return (<Fragment>
+                    {cat?<Card style={{ width: "215px" }}>
+                      <FilterSection>
+                        {cat}
+                      </FilterSection>
+                    </Card>:null}
+                  </Fragment>);
         }) : null}
 
         {ratingFilter.length != 0 ? ratingFilter.map(rating => {

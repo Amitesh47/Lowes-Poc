@@ -10,7 +10,7 @@ const ProductConatiner = () => {
     const categoryFilter = useSelector(state => state.categoryFilter)
     let category=[]
     // console.log(categoryFilter)
-    categoryFilter.length==0?category = data1[1]:category=categoryFilter
+    categoryFilter.length==1?category = data1[1]:category=categoryFilter
     const wholeData = data1[0]
     const dispatch = useDispatch()
     // category ? console.log(category[0]) : null

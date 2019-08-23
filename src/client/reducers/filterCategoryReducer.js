@@ -1,7 +1,7 @@
-export default (state = [], action) => {
+export default (state = [null], action) => {
     switch (action.type) {
         case 'CATEGORY_FILTER_ON':{
-            return [...state,action.payload]
+            return [action.payload,...state]
         }
         case 'CATEGORY_FILTER_OFF':{
             return [
