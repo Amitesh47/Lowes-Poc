@@ -28,7 +28,7 @@ const ProductCard = props => {
   return (
     <Fragment>
       <CardTag>
-        <ProdCard inline>
+        <ProdCard inline='true'>
           <ProdCard.Body data-test="ProductCard">
             <div>
               <ProductImage
