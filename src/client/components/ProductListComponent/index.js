@@ -61,18 +61,23 @@ const ProductList = ({prodListWithCategory}) => {
     // console.log(renderData)
 
     let a=renderData.map(array=>array.some(function (el) {return el != null}))
+    // console.log('lol')
+    // console.log(renderData)
+    
+    
+    // let a=renderData.map(productItem=>{
+    //         let b=productItem.map(productItemFilter=>{
+    //                 if(productItemFilter==null||productItem==Array(100).fill(null)||productItem==Array(300).fill(null)||productItem==Array(200).fill(null)){
+    //                     return null
+    //                 }
+    //             })
 
-    // let a=renderData.map(array=>{
-    //     if(array){   console.log('hello2')
-    //                 array.map(arrayPrice=>arrayPrice.some(function (el2) {return el2 != null}))
-    //             }
-    //     console.log('hello2') 
-    //     return array.some(function (el) {return el != null})
-    // })
+    //         return b.some(function (el) {return el != null})
+    //     })
 
-    console.log('hello')
-    console.log(renderData)
-    console.log(a)
+    // console.log('hello')
+    // console.log(renderData)
+    // console.log(a)
     let check=null
     for(let i=0;i<a.length;i++){
         if (a[i]==true)
@@ -86,9 +91,11 @@ const ProductList = ({prodListWithCategory}) => {
         
         <Fragment>
             
-            {check ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null}
+            {(check && renderData.length) ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null}
             {/* {renderData.some(function (el) {return el !== null}) ?<CategoryTitleTag>{category?category:`No Category`}</CategoryTitleTag>:null} */}
-                {check?<Card >
+            {console.log(renderData.length)}
+            {console.log(renderData)}
+            {check ?<Card >
                     {renderData}
                 </Card>:null}
         </Fragment>
