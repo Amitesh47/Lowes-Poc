@@ -20,6 +20,7 @@ import {
 
 const ProductCard = props => {
   let productDetails = props.productDetails;
+  console.log(productDetails)
   let id = productDetails._id;
   let [count, setCount] = useState(1);
   const quantityById = useSelector(state => state.count.quantityById);
@@ -33,7 +34,7 @@ const ProductCard = props => {
             <div>
               <ProductImage
                 src={productDetails.thumbnail}
-                data-test="ProductImage"
+                data-test="ProductImage1"
                 alt={productDetails.name}
               />
               <Discount discount={productDetails.offerMessage} />
