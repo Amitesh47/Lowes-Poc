@@ -15,7 +15,9 @@ const Discount = ({ discount }) => {
             {/* {stats.error && 'Error!'}
             {stats.isLoading && 'Loading'}
             {stats.downloads !== null && `${stats.downloads}`} */}
-            {discount}
+            <div data-test="getDiscount">
+                {discount}
+            </div>
         </DiscountSpan>
     )
 }

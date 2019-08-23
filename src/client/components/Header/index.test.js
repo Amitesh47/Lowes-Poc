@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Header from './index';
 import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
@@ -27,7 +27,7 @@ describe('Header Component', () => {
                 <Header />
             </Provider>);
         const wrapper = findByTestAtrr(component, 'getHeader');
-        expect(wrapper.length).toBe(3);
+        expect(wrapper.length).toBe(1);
     });
 
     it('Should render Logo component without errors', () => {
@@ -36,7 +36,7 @@ describe('Header Component', () => {
             <Header />
         </Provider>);
         const wrapper = findByTestAtrr(component, 'getLogo');;
-        expect(wrapper.length).toBe(3);
+        expect(wrapper.length).toBe(1);
     });
 
     it('Should render Search component without errors', () => {
@@ -45,7 +45,7 @@ describe('Header Component', () => {
             <Header />
         </Provider>);;
         const wrapper = findByTestAtrr(component, 'getSearch');;
-        expect(wrapper.length).toBe(3);
+        expect(wrapper.length).toBe(1);
     });
 
     it('Should render Cart component without errors', () => {
@@ -54,7 +54,7 @@ describe('Header Component', () => {
             <Header />
         </Provider>);;
         const wrapper = findByTestAtrr(component, 'getCart');
-        expect(wrapper.length).toBe(3);
+        expect(wrapper.length).toBe(1);
     });
 
 })
