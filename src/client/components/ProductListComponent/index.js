@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import ProductCard from '../ProductCardComponent'
 import {CategoryTitleTag,Card} from './styles'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
 const ProductList = ({prodListWithCategory}) => {

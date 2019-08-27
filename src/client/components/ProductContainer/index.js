@@ -27,9 +27,10 @@ const ProductConatiner = () => {
         }) : null        
         return <ProductList
                     prodListWithCategory={prodListWithCategory}
+                    key={cat} 
                 />
     }) : null
-    console.log({renderData})
+    // console.log({renderData})
     
     // let a=renderData.map( value =>{
     //     if (value.key ==null){

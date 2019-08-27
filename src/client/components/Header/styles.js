@@ -55,6 +55,10 @@ text-decoration: none solid rgb(71, 71, 71);
 
 `;
 
+let FullSearchInput = styled.div`
+
+`;
+
 let Cart = styled.img`
 margin-top:30px;
 @media (max-width: 450px) {

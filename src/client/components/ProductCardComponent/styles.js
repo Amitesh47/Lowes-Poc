@@ -48,7 +48,8 @@ let ProductDesc = styled.div`
     font-weight: 400;
     text-decoration: none solid rgb(0, 0, 0);
     line-height: 21px;
-    overflow: auto
+    overflow: auto;
+    
 `;
 
 let ProductRatings = styled.span`

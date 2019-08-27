@@ -108,7 +108,7 @@ const Filter = () => {
   const renderedCategory = category ? category.map((cat) => {
     if (cat === null)
       return null
-    return <div>
+    return <div key={cat}>
       <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
         // onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
         onClick={() => { return getCategoryCheck(window.event, cat) }}
@@ -285,7 +285,7 @@ const Filter = () => {
 
       <FilterDetailsConatiner data-test="FilterDetailsCard">
         {categoryFilter.length != 0 ? categoryFilter.map(cat => {
-          return (<Fragment>
+          return (<Fragment key={cat}>
                     {cat?<Card style={{ width: "215px" }}>
                       <FilterSection>
                         {cat}
@@ -295,7 +295,7 @@ const Filter = () => {
         }) : null}
 
         {ratingFilter.length != 0 ? ratingFilter.map(rating => {
-          return (<Card style={{ width: "215px" }}>
+          return (<Card key={rating} style={{ width: "215px" }}>
             <FilterSection>
               {rating}
             
@@ -304,7 +304,7 @@ const Filter = () => {
         }) : null}
 
         {priceFilter.length != 0 ? priceFilter.map(price => {
-          return (<Card style={{ width: "215px" }}>
+          return (<Card key={price} style={{ width: "215px" }}>
             <FilterSection>
               {price}
            

@@ -20,7 +20,7 @@ import {
 
 const ProductCard = props => {
   let productDetails = props.productDetails;
-  console.log(productDetails)
+  // console.log(productDetails)
   let id = productDetails._id;
   let [count, setCount] = useState(1);
   const quantityById = useSelector(state => state.count.quantityById);
@@ -42,7 +42,7 @@ const ProductCard = props => {
             <ProductTitle data-test="ProductTitle">
               {productDetails.name}
             </ProductTitle>
-            <ProductDesc data-test="ProductDesc">
+            <ProductDesc data-test="ProductDesc" tabindex="0">
               {productDetails.description}
             </ProductDesc>
 
