@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import { Logo, Search, Cart }  from '../src/client/components/Header/styles'
 import { FilterHeader, FilterSection,AddFilterButton } from '../src/client/components/FilterComponent/styles'
 import { 
@@ -42,12 +43,12 @@ storiesOf('Header', module)
   .add('with Search Bar', () => <Search/>)
   .add('with Cart ', () => <Cart src={imageOfCart.src} alt={imageOfCart.alt}/>)
   
-  storiesOf('FilterComponent', module)
+storiesOf('FilterComponent', module)
   .add('with Filter Header', () => <FilterHeader>Filters</FilterHeader>)
   .add('with Filter Section', () => <FilterSection >Filter Options </FilterSection>)
   .add('with Filter Plus Button ', () => <AddFilterButton src={filterButton.src} alt={filterButton.alt}/>)
   
-  storiesOf('ProductCard Component', module)
+storiesOf('ProductCard Component', module)
   .add('with Product Image', () => <ProductImage src="https://tinyurl.com/y5nmss4b"/>)
   .add('with Product Title', () => <ProductTitle >Product Title</ProductTitle>)
   .add('with Product Description', () => <ProductDesc>This is Product Description Story</ProductDesc>)

@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import ProductCard from '../ProductCardComponent'
-import {CategoryTitleTag,Card} from './styles'
 import { useSelector } from 'react-redux'
 
+import ProductCard from '../ProductCardComponent'
+import {CategoryTitleTag,Card} from './styles'
 
 const ProductList = ({prodListWithCategory}) => {
     // let {prodListWithCategory}= props
