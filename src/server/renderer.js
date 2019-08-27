@@ -25,7 +25,7 @@ export default (req, store, context) => {
     const helmet = Helmet.renderStatic();
 
     return `
-    <html>
+    <html lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
         ${helmet.title.toString()}
@@ -41,7 +41,7 @@ export default (req, store, context) => {
         />
     </head>
     <body>
-        <div id = "root"> ${content} </div>
+        <main role="main"><div id = "root"> ${content} </div></main>
         <script>window.INITIAL_STATE = ${serialize(store.getState())}</script> 
         <script src="bundle.js"></script>
         <script
