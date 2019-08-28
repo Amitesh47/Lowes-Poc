@@ -10,11 +10,11 @@ let FilterHeader = styled.div`
     border: 1px solid #428bca;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    background-color: #428bca;
+    background-color: #0000ff;
     font-family: Arial;
     font-size: 14px;
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 700;
     text-decoration: none solid rgb(255, 255, 255);
 `;
 
