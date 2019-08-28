@@ -71,7 +71,6 @@ margin-top:30px;
   }
 width: 32px;
 height: 32px;
-fill: #000000;
 `;
 
 
