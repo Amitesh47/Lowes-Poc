@@ -36,17 +36,17 @@ text-decoration: none solid rgb(111, 111, 111);
 `;
 
 let Search = styled.input`
-margin-top: 20px;
+margin-top: 1px;
 @media (max-width: 450px) {
     width: 100px;
     height:35px;
   }
-height: 56px;
-padding: 0px 10px;
-border: 1px solid #c8c8c8;
+height: 36px;
+
 background-color: #ffffff;
 background-size: cover;
 font-family: Arial;
+border-width: 0px;
 font-size: 14px;
 color: #474747;
 font-weight: 400;
@@ -56,7 +56,10 @@ text-decoration: none solid rgb(71, 71, 71);
 `;
 
 let FullSearchInput = styled.div`
-
+border: 1px solid #c8c8c8;
+width: 172px;
+height: 63px;
+margin-top: 18px;
 `;
 
 let Cart = styled.img`
@@ -72,4 +75,4 @@ fill: #000000;
 `;
 
 
-export { Nav, Logo, Search, Cart }
+export { Nav, Logo, Search, Cart,FullSearchInput }
