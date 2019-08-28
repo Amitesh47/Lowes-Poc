@@ -15,8 +15,8 @@ let CategoryTitleTag = styled.h2`
     text-decoration: none solid rgb(34, 34, 34);
 `;
 
-let Card = styled(CardDeck)`
+let CardList = styled(CardDeck)`
 "margin-bottom":"40px"
 `;
 
-export {CategoryTitleTag,Card}
+export {CategoryTitleTag,CardList}
