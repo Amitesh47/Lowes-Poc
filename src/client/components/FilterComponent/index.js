@@ -30,9 +30,6 @@ const Filter = () => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch({ type: 'GET_DATA' })
-  }, [])
 
   let getCategoryCheck = (e, cat) => {
     let check = document.getElementById(e.target.id)
