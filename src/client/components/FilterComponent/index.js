@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
@@ -26,7 +26,7 @@ const Filter = () => {
   const ratingFilter = useSelector(state => state.ratingFilter)
 
   const priceFilter = useSelector(state => state.priceRange)
-  // console.log("Price Filter :", priceFilter)
+ 
 
   const dispatch = useDispatch()
 
@@ -76,8 +76,6 @@ const Filter = () => {
 
 
   let getRatingCheck = (e) => {
-    // console.log(e.target.id)
-    // console.log(typeof(e.target.id))
     let check = document.getElementById(e.target.id)
     if (check.checked == true) {
       dispatch({
@@ -107,7 +105,6 @@ const Filter = () => {
       return null
     return <div key={cat}>
       <Form.Check custom type="checkbox" label={cat} id={`custom-checkbox-${cat}`}
-        // onClick={()=>dispatch({ type: 'CATEGORY_FILTER_ON', payload:cat })}
         onClick={() => { return getCategoryCheck(window.event, cat) }}
       />
     </div>
@@ -153,7 +150,7 @@ const Filter = () => {
                   alt="Add"
                 />
 
-                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+                
               </Accordion.Toggle>
             </AddFilterButton>
           </FilterSection>
@@ -198,7 +195,7 @@ const Filter = () => {
                 eventKey="2"
                 style={{ padding: "0" }}
               >
-                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+                
                 <AddFilterButtonImage
                   src="../../../../utils/assets/addIcon_Filter.png"
                   alt="Add"
@@ -256,7 +253,7 @@ const Filter = () => {
                 eventKey="3"
                 style={{ padding: "0" }}
               >
-                {/* <AddFilterButtonImage src={require("../../../../utils/assets/addIcon_Filter.png")} alt="Add" /> */}
+                
                 <AddFilterButtonImage
                   src="../../../../utils/assets/addIcon_Filter.png"
                   alt="Add"

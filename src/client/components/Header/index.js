@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux'
 
 const Header = () => {
     const cartCount = useSelector((state) => state.count.totalCount)
-    // console.log(cartCount)
     return (
         <Nav data-test="getHeader">
             <Container>

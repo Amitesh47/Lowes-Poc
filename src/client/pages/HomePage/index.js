@@ -13,7 +13,7 @@ const Home = () => {
       <Helmet>
         <title>POC-Lowes</title>
         <meta name="description" content="Shop for your favorite products at Lowes!" />
-        {/* <meta name="theme-color" content="#008f68" /> */}
+       
       </Helmet>
       <HomePageConatiner>
         <Row>

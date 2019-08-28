@@ -26,8 +26,7 @@ const ProductList = ({ prodListWithCategory }) => {
 
   let renderData = [];
 
-  console.log(renderData);
-  console.log(prodList);
+ 
   prodList.forEach(product => {
     if (
       rating.includes(product.ratingInfo.rating) &&
