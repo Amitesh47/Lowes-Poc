@@ -20,7 +20,6 @@ import {
 
 const ProductCard = props => {
   let productDetails = props.productDetails;
-  // console.log(productDetails)
   let id = productDetails._id;
   let [count, setCount] = useState(1);
   const quantityById = useSelector(state => state.count.quantityById);
@@ -47,11 +46,11 @@ const ProductCard = props => {
             </ProductDesc>
 
             <p>
-              <Star src="../../../../utils/assets/star.png" alt="star"/>
-              <Star src="../../../../utils/assets/star.png"  alt="star"/>
-              <Star src="../../../../utils/assets/star.png" alt="star"/>
-              <Star src="../../../../utils/assets/star.png" alt="star"/>
-              <Star src="../../../../utils/assets/star.png" alt="star"/>
+              <Star src="../../../../utils/assets/star.png" alt="star" />
+              <Star src="../../../../utils/assets/star.png" alt="star" />
+              <Star src="../../../../utils/assets/star.png" alt="star" />
+              <Star src="../../../../utils/assets/star.png" alt="star" />
+              <Star src="../../../../utils/assets/star.png" alt="star" />
               <ProductRatings data-test="ProductRatings">
                 ( {productDetails.ratingInfo.userCount} )
               </ProductRatings>
@@ -71,7 +70,6 @@ const ProductCard = props => {
                   };
 
                   if (productIdInCart) {
-                    // const CartWithoutProd=quantityById.filter((episodeID)=>episodeID!=id)
                     dispatchObj = {
                       type: "REMOVE_FROM_CART",
                       payload: { productId: id, count }
@@ -95,12 +93,11 @@ const ProductCard = props => {
                       onClick={() => setCount(count - 1)}
                     />
                   )}
-                  {/* onClick = {() => console.log("Clicked")}/> */}
-                  {/* <CartButtonImage src={require("../../../../utils/assets/subIcon.png")} alt="Remove From Cart" />                             */}
+
                 </CartCountButton>
                 <CartCount>{count}</CartCount>
                 <CartCountButton>
-                  {/* <CartButtonImage src={require("../../../../utils/assets/addIcon.png")} alt="Add To Cart" />                  */}
+
                   {quantityById.find(ID => ID == id) ? null : (
                     <CartButtonImage
                       data-test="IncrementCountButton"
