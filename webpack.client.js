@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const baseConfig = require("./webpack.base")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+
 const config = {
     mode:'development',
     entry: './src/client/client.js',
