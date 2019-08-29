@@ -47,7 +47,7 @@ const ProductList = ({ prodListWithCategory }) => {
     <Fragment>
       {renderData.length ? (
         <CategoryTitleTag>
-          {category ? category : `No Category`}
+          {category ? category : `Special Offers`}
         </CategoryTitleTag>
       ) : null}
       {<CardList>{renderData}</CardList>}
