@@ -10,7 +10,7 @@ import createSagaMiddleware from 'redux-saga'
 import Routes from './Routes'
 import reducers from './reducers'
 import rootSaga from './sagas/sagas'
-import axe from 'react-axe'
+// import axe from 'react-axe'
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -18,9 +18,9 @@ const store = createStore(reducers,applyMiddleware(sagaMiddleware));
  sagaMiddleware.run(rootSaga)
 
 // runs React-axe for production mode 
-if(process.env.NODE_ENV !== "production"){
-    axe(React,ReactDOM,1000)
-}
+// if(process.env.NODE_ENV !== "production"){
+//     axe(React,ReactDOM,1000)
+// }
 
 
 
