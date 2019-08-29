@@ -6,19 +6,21 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon  --watch build --exec node build/bundle.js",
-    "dev:build-server": "webpack -p --config webpack.server.js --watch",
-    "dev:build-client": "webpack -p --config webpack.client.js --watch",
+    "dev:build-server": "webpack  --config webpack.server.js --watch",
+    "dev:build-client": "webpack  --config webpack.client.js --watch",
+    "prod": "npm-run-all --parallel prod-dev:*",
+    "prod-dev:server": "nodemon  --watch build --exec node build/bundle.js",
+    "prod-dev:build-server": "webpack -p --config webpack.server.js --watch",
+    "prod-dev:build-client": "webpack -p --config webpack.client.js --watch",
     "test": "jest",
     "storybook": "start-storybook "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "compression": "^1.7.4",
     "concurrently": "3.5.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.15",
     "react": "16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "16.8.6",
@@ -26,8 +28,7 @@
     "react-router-config": "1.0.0-beta.4",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
-    "serialize-javascript": "1.4.0",
-    "styled-components": "^4.3.2"
+    "serialize-javascript": "1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -54,7 +55,6 @@
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
     "npm-run-all": "4.1.1",
-    "react-axe": "^3.2.0",
     "react-redux": "^7.1.0",
     "redux-mock-store": "^1.5.3",
     "redux-saga": "^1.0.5",
@@ -64,6 +64,8 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "2.8.2",
     "webpack-merge": "4.1.0",
-    "webpack-node-externals": "1.6.0"
+    "webpack-node-externals": "1.6.0",
+    "styled-components": "^4.3.2",
+    "lodash": "^4.17.15"
   }
 }

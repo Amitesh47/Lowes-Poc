@@ -2,9 +2,10 @@
 // any event or js code attached is not executed.
 //For this purpose , a client side webpack config is also done.
 
+
 const path = require('path')
 const merge = require('webpack-merge')
-const baseConfig = require("./webpack.base")
+const  baseConfig = require("./webpack.base")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
