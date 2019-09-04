@@ -10,8 +10,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 
 const config = {
-    mode:'development',
-    entry: './src/client/client.js',
+    entry:'./src/client/client.js',
      //tell webpack the root file of our
     // client application
 
