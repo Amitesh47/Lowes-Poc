@@ -8,9 +8,7 @@ const config = {
     target: 'node',
     // inform webpack that we are building a bundle
     //for  nodeJS , rather than for the browser
-    mode: 'development',
-    
-    entry: './src/index.js',
+    entry:'./src/index.js',
     //tell webpack the root file of our
     // server application
 
