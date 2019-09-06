@@ -15,7 +15,8 @@ import {
   CartButtonImage,
   Star,
   CardTag,
-  ProdCard
+  ProdCard,
+  RemoveFromCartButton
 } from "./styles";
 
 const ProductCard = props => {
@@ -28,7 +29,7 @@ const ProductCard = props => {
   return (
     <Fragment>
       <CardTag>
-        <ProdCard inline='true'>
+        <ProdCard inline="true">
           <ProdCard.Body data-test="ProductCard">
             <div>
               <ProductImage
@@ -60,29 +61,57 @@ const ProductCard = props => {
               ${productDetails.price}
             </ProductPrice>
             <div>
-              <AddToCartButon
-                data-test="AddToCartButton"
-                onClick={() => {
-                  const productIdInCart = quantityById.includes(id);
-                  let dispatchObj = {
-                    type: "ADD_TO_CART",
-                    payload: { productId: id, count }
-                  };
-
-                  if (productIdInCart) {
-                    dispatchObj = {
-                      type: "REMOVE_FROM_CART",
+              {quantityById.find(ID => ID == id) ? (
+                <RemoveFromCartButton
+                  data-test="AddToCartButton"
+                  onClick={() => {
+                    const productIdInCart = quantityById.includes(id);
+                    let dispatchObj = {
+                      type: "ADD_TO_CART",
                       payload: { productId: id, count }
                     };
-                  }
 
-                  dispatch(dispatchObj);
-                }}
-              >
-                {quantityById.find(ID => ID == id)
+                    if (productIdInCart) {
+                      dispatchObj = {
+                        type: "REMOVE_FROM_CART",
+                        payload: { productId: id, count }
+                      };
+                    }
+
+                    dispatch(dispatchObj);
+                  }}
+                >
+                  Remove from Cart
+                  {/* {quantityById.find(ID => ID == id)
+                ? `Remove from Cart`
+                : `Add to Cart`} */}
+                </RemoveFromCartButton>
+              ) : (
+                <AddToCartButon
+                  data-test="AddToCartButton"
+                  onClick={() => {
+                    const productIdInCart = quantityById.includes(id);
+                    let dispatchObj = {
+                      type: "ADD_TO_CART",
+                      payload: { productId: id, count }
+                    };
+
+                    if (productIdInCart) {
+                      dispatchObj = {
+                        type: "REMOVE_FROM_CART",
+                        payload: { productId: id, count }
+                      };
+                    }
+
+                    dispatch(dispatchObj);
+                  }}
+                >
+                  Add to Cart
+                  {/* {quantityById.find(ID => ID == id)
                   ? `Remove from Cart`
-                  : `Add to Cart`}
-              </AddToCartButon>
+                  : `Add to Cart`} */}
+                </AddToCartButon>
+              )}
               <CountContainer>
                 <CartCountButton>
                   {quantityById.find(ID => ID == id) ? null : (
@@ -93,11 +122,9 @@ const ProductCard = props => {
                       onClick={() => setCount(count - 1)}
                     />
                   )}
-
                 </CartCountButton>
                 <CartCount>{count}</CartCount>
                 <CartCountButton>
-
                   {quantityById.find(ID => ID == id) ? null : (
                     <CartButtonImage
                       data-test="IncrementCountButton"
