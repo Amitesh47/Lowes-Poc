@@ -21,7 +21,7 @@ const ProductConatiner = () => {
     const renderData = category ? category.map((cat) => {
         let prodListWithCategory = [{"category":cat}]
         wholeData ? wholeData.map((data) => {
-            if (data.category === cat)
+            if (data.category === cat && data.outOfStock===false)
                 prodListWithCategory = [...prodListWithCategory,data]   
         }) : null        
         return <ProductList
