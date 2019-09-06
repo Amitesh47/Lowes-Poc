@@ -96,6 +96,24 @@ let AddToCartButon = styled.button`
     text-align: center;
 `;
 
+let RemoveFromCartButton = styled.button`
+    width: 130px;
+    @media (max-width: 450px) {
+        width: 85px;
+    }
+    height: 34px;
+    border: 1px solid #357ebd;
+    border-radius: 4px;
+    background-color: #fc5353;
+    background-repeat: no-repeat;
+    font-family: Arial;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-align: center;
+`;
+
 let CartCount = styled.span`
     position: relative;
     top: 3px;
@@ -163,5 +181,6 @@ export {
     CartButtonImage,
     Star,
     CardTag,
-    ProdCard
+    ProdCard,
+    RemoveFromCartButton
 };
