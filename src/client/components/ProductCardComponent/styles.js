@@ -102,7 +102,7 @@ let RemoveFromCartButton = styled.button`
         width: 85px;
     }
     height: 34px;
-    border: 1px solid #357ebd;
+    border: 1px solid #fc5353;
     border-radius: 4px;
     background-color: #fc5353;
     background-repeat: no-repeat;
