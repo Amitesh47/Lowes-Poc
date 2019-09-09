@@ -119,7 +119,7 @@ const ProductCard = props => {
                       data-test="DecrementCountButton"
                       src="../../../../utils/assets/subIcon.png"
                       alt="Remove From Cart"
-                      onClick={() => setCount(count - 1)}
+                      onClick={() =>count>0? setCount(count - 1):setCount(0)}
                     />
                   )}
                 </CartCountButton>
