@@ -22,6 +22,7 @@ import {
 const ProductCard = props => {
   let productDetails = props.productDetails;
   let id = productDetails._id;
+  let availableStock=productDetails.availableStock;
   let [count, setCount] = useState(1);
   const quantityById = useSelector(state => state.count.quantityById);
   const dispatch = useDispatch();
@@ -119,7 +120,7 @@ const ProductCard = props => {
                       data-test="DecrementCountButton"
                       src="../../../../utils/assets/subIcon.png"
                       alt="Remove From Cart"
-                      onClick={() =>count>0? setCount(count - 1):setCount(0)}
+                      onClick={() =>count>1? setCount(count - 1):setCount(1)}
                     />
                   )}
                 </CartCountButton>
@@ -130,7 +131,7 @@ const ProductCard = props => {
                       data-test="IncrementCountButton"
                       src="../../../../utils/assets/addIcon.png"
                       alt="Add To Cart"
-                      onClick={() => setCount(count + 1)}
+                      onClick={() =>count<availableStock? setCount(count + 1):setCount(availableStock)}
                     />
                   )}
                 </CartCountButton>
