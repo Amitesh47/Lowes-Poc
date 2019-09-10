@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 let FilterHeader = styled.div`
     width: 215px;
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         width: 300px;
     }
     height: 42px;
@@ -20,7 +20,7 @@ let FilterHeader = styled.div`
 
 let FilterSection = styled.div`
     width: 215px;
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         width: 300px;
     }
     height: 42px;
@@ -37,7 +37,7 @@ let FilterSection = styled.div`
 
 let FilterSectionBottom = styled.div`
     width: 215px;
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         width: 300px;
     }   
     height: 42px;
@@ -91,7 +91,7 @@ let FilterConatiner = styled.div`
  margin-top: 120px;
  width:215px;
  position:fixed;
- @media (max-width: 450px) {
+ @media (max-width: 600px) {
     width: 300px;
     height: 120px;
     margin-top:100px;

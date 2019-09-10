@@ -3,7 +3,7 @@ import CardDeck from 'react-bootstrap/CardDeck'
 
 let CategoryTitleTag = styled.h2`
     width: 316px;
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         font-size: 24px;
     }
     height: 42px;

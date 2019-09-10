@@ -6,7 +6,7 @@ border: 1px solid #666666;
 background-color: #fff;
 background-size: cover;
 box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
-@media (max-width: 450px) {
+@media (max-width: 600px) {
     overflow: hidden;
     z-index:1;
     position: fixed;
@@ -21,7 +21,7 @@ width: 100%;
 
 let Logo = styled.div`
 margin-top: 15px;
-@media (max-width: 450px) {
+@media (max-width: 600px) {
     width: 200px;
     font-size: 20px;
   }
@@ -37,7 +37,7 @@ text-decoration: none solid rgb(111, 111, 111);
 
 let Search = styled.input`
 margin-top: 1px;
-@media (max-width: 450px) {
+@media (max-width: 600px) {
     width: 100px;
     height:35px;
   }
@@ -56,7 +56,7 @@ text-decoration: none solid rgb(71, 71, 71);
 `;
 
 let FullSearchInput = styled.div`
-@media (max-width: 450px) {
+@media (max-width: 600px) {
  margin-left:-22px;
 }
 width: 172px;
@@ -66,7 +66,7 @@ margin-top: 18px;
 
 let Cart = styled.img`
 margin-top:30px;
-@media (max-width: 450px) {
+@media (max-width: 600px) {
     width: 25px;
     margin-left: -24px;
     height: 21px;
@@ -76,7 +76,7 @@ height: 32px;
 `;
 
 let SearchLabel = styled.label`
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   display: inline-block;
 margin-bottom: .5rem;
 font-size: 14px;
