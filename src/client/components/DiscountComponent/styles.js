@@ -5,7 +5,7 @@ let DiscountSpan = styled.span`
     position :absolute;
     background:url('./utils/assets/discountIcon.png');
     background-repeat: no-repeat;
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         right:11px;
     }
     right:12px;
